@@ -1,6 +1,7 @@
 import {
   ApolloError,
   MutationFunction,
+  MutationHookOptions as BaseMutationHookOptions,
   MutationResult,
   useMutation as useBaseMutation
 } from "@apollo/client";
@@ -22,64 +23,64 @@ export type UseMutation<TData, TVariables> = [
   MutationFunction<TData, TVariables>,
   MutationResultWithOpts<TData>
 ];
-export type UseMutationCbs<TData> = Partial<{
-  onCompleted: (data: TData) => void;
-  onError: (error: ApolloError) => void;
-  refetchQueries?: string[];
-}>;
 export type UseMutationHook<TData, TVariables> = (
-  cbs: UseMutationCbs<TData>
+  cbs: MutationHookOptions<TData, TVariables>
 ) => UseMutation<TData, TVariables>;
+
+export type MutationHookOptions<TData, TVariables> = BaseMutationHookOptions<
+  TData,
+  TVariables
+>;
+
+export function useMutation<TData, TVariables>(
+  mutation: DocumentNode,
+  { onCompleted, onError, ...opts }: MutationHookOptions<TData, TVariables>
+): UseMutation<TData, TVariables> {
+  const notify = useNotifier();
+  const intl = useIntl();
+  const user = useUser();
+
+  const [mutateFn, result] = useBaseMutation(mutation, {
+    ...opts,
+    onCompleted,
+    onError: (err: ApolloError) => {
+      if (hasError(err, GqlErrors.ReadOnlyException)) {
+        notify({
+          status: "error",
+          text: intl.formatMessage(commonMessages.readOnly)
+        });
+      } else if (err.graphQLErrors.some(isJwtError)) {
+        user.logout();
+        notify({
+          status: "error",
+          text: intl.formatMessage(commonMessages.sessionExpired)
+        });
+      } else if (!hasError(err, GqlErrors.LimitReachedException)) {
+        notify({
+          status: "error",
+          text: intl.formatMessage(commonMessages.somethingWentWrong)
+        });
+      }
+      if (onError) {
+        onError(err);
+      }
+    }
+  });
+
+  return [
+    mutateFn,
+    {
+      ...result,
+      status: getMutationStatus(result)
+    }
+  ];
+}
 
 function makeMutation<TData, TVariables>(
   mutation: DocumentNode
 ): UseMutationHook<TData, TVariables> {
-  function useMutation<TData, TVariables>({
-    onCompleted,
-    onError,
-    refetchQueries = []
-  }: UseMutationCbs<TData>): UseMutation<TData, TVariables> {
-    const notify = useNotifier();
-    const intl = useIntl();
-    const user = useUser();
-
-    const [mutateFn, result] = useBaseMutation(mutation, {
-      onCompleted,
-      refetchQueries,
-      onError: (err: ApolloError) => {
-        if (hasError(err, GqlErrors.ReadOnlyException)) {
-          notify({
-            status: "error",
-            text: intl.formatMessage(commonMessages.readOnly)
-          });
-        } else if (err.graphQLErrors.some(isJwtError)) {
-          user.logout();
-          notify({
-            status: "error",
-            text: intl.formatMessage(commonMessages.sessionExpired)
-          });
-        } else if (!hasError(err, GqlErrors.LimitReachedException)) {
-          notify({
-            status: "error",
-            text: intl.formatMessage(commonMessages.somethingWentWrong)
-          });
-        }
-        if (onError) {
-          onError(err);
-        }
-      }
-    });
-
-    return [
-      mutateFn,
-      {
-        ...result,
-        status: getMutationStatus(result)
-      }
-    ];
-  }
-
-  return useMutation;
+  return (opts: MutationHookOptions<TData, TVariables>) =>
+    useMutation<TData, TVariables>(mutation, opts);
 }
 
 export default makeMutation;
