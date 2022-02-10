@@ -1,11 +1,11 @@
-import { ChannelErrorFragment } from "@saleor/fragments/types/ChannelErrorFragment";
+import {
+  ChannelDetailsFragmentFragment,
+  ChannelErrorCode,
+  ChannelErrorFragmentFragment
+} from "@saleor/graphql";
 import { ProductDetails_product_channelListings } from "@saleor/products/types/ProductDetails";
-import { ChannelErrorCode } from "@saleor/types/globalTypes";
 
-import { Channel_channel } from "./types/Channel";
-import { Channels_channels } from "./types/Channels";
-
-export const channelCreateErrors: ChannelErrorFragment[] = [
+export const channelCreateErrors: ChannelErrorFragmentFragment[] = [
   {
     __typename: "ChannelError",
     code: ChannelErrorCode.UNIQUE,
@@ -14,7 +14,7 @@ export const channelCreateErrors: ChannelErrorFragment[] = [
   }
 ];
 
-export const channelsList: Channels_channels[] = [
+export const channelsList: ChannelDetailsFragmentFragment[] = [
   {
     __typename: "Channel",
     currencyCode: "euro",
@@ -115,7 +115,7 @@ export const channelsList: Channels_channels[] = [
   }
 ];
 
-export const channel: Channel_channel = {
+export const channel: ChannelDetailsFragmentFragment = {
   __typename: "Channel",
   currencyCode: "zl",
   hasOrders: false,
