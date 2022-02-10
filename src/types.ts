@@ -217,3 +217,7 @@ export interface AutocompleteFilterOpts
 }
 
 export type Ids = string[];
+
+export type RelayToFlat<T extends { edges: Array<{ node: any }> }> = Array<
+  T["edges"][0]["node"]
+>;
