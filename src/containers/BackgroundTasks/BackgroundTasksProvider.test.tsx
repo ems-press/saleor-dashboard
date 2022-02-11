@@ -1,3 +1,4 @@
+import { CheckExportFileStatusQuery } from "@saleor/graphql";
 import { JobStatusEnum } from "@saleor/types/globalTypes";
 import { renderHook } from "@testing-library/react-hooks";
 import { createMockClient, RequestHandlerResponse } from "mock-apollo-client";
@@ -8,15 +9,15 @@ import {
 } from "./BackgroundTasksProvider";
 import { checkExportFileStatus } from "./queries";
 import { Task, TaskData, TaskStatus } from "./types";
-import { CheckExportFileStatus } from "./types/CheckExportFileStatus";
 
 jest.useFakeTimers();
 
 function renderBackgroundTasks() {
   const mockClient = createMockClient();
   mockClient.setRequestHandler(checkExportFileStatus, () =>
-    Promise.resolve<RequestHandlerResponse<CheckExportFileStatus>>({
+    Promise.resolve<RequestHandlerResponse<CheckExportFileStatusQuery>>({
       data: {
+        __typename: "Query",
         exportFile: {
           __typename: "ExportFile",
           id: "123",
