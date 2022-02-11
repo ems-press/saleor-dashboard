@@ -1,25 +1,6 @@
 import { gql } from "@apollo/client";
-import {
-  customerAddressesFragment,
-  customerDetailsFragment,
-  customerFragment
-} from "@saleor/fragments/customers";
-import makeQuery from "@saleor/hooks/makeQuery";
 
-import { TypedQuery } from "../queries";
-import {
-  CustomerAddresses,
-  CustomerAddressesVariables
-} from "./types/CustomerAddresses";
-import { CustomerCreateData } from "./types/CustomerCreateData";
-import {
-  CustomerDetails,
-  CustomerDetailsVariables
-} from "./types/CustomerDetails";
-import { ListCustomers, ListCustomersVariables } from "./types/ListCustomers";
-
-const customerList = gql`
-  ${customerFragment}
+export const customerList = gql`
   query ListCustomers(
     $after: String
     $before: String
@@ -53,13 +34,8 @@ const customerList = gql`
     }
   }
 `;
-export const useCustomerListQuery = makeQuery<
-  ListCustomers,
-  ListCustomersVariables
->(customerList);
 
-const customerDetails = gql`
-  ${customerDetailsFragment}
+export const customerDetails = gql`
   query CustomerDetails($id: ID!) {
     user(id: $id) {
       ...CustomerDetailsFragment
@@ -91,29 +67,15 @@ const customerDetails = gql`
   }
 `;
 
-export const useCustomerDetails = makeQuery<
-  CustomerDetails,
-  CustomerDetailsVariables
->(customerDetails);
-
-const customerAddresses = gql`
-  ${customerAddressesFragment}
+export const customerAddresses = gql`
   query CustomerAddresses($id: ID!) {
     user(id: $id) {
       ...CustomerAddressesFragment
     }
   }
 `;
-export const TypedCustomerAddressesQuery = TypedQuery<
-  CustomerAddresses,
-  CustomerAddressesVariables
->(customerAddresses);
-export const useCustomerAddressesQuery = makeQuery<
-  CustomerAddresses,
-  CustomerAddressesVariables
->(customerAddresses);
 
-const customerCreateData = gql`
+export const customerCreateData = gql`
   query CustomerCreateData {
     shop {
       countries {
@@ -123,6 +85,3 @@ const customerCreateData = gql`
     }
   }
 `;
-export const TypedCustomerCreateDataQuery = TypedQuery<CustomerCreateData, {}>(
-  customerCreateData
-);

@@ -6,9 +6,12 @@ import Metadata from "@saleor/components/Metadata/Metadata";
 import { MetadataFormData } from "@saleor/components/Metadata/types";
 import PageHeader from "@saleor/components/PageHeader";
 import Savebar from "@saleor/components/Savebar";
-import { UpdateCustomer_customerUpdate_errors } from "@saleor/customers/types/UpdateCustomer";
 import { AccountErrorFragment } from "@saleor/fragments/types/AccountErrorFragment";
 import CustomerGiftCardsCard from "@saleor/giftCards/components/GiftCardCustomerCard/CustomerGiftCardsCard";
+import {
+  AccountErrorFragmentFragment,
+  CustomerDetailsQuery
+} from "@saleor/graphql";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import { sectionNames } from "@saleor/intl";
 import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
@@ -19,7 +22,6 @@ import React from "react";
 import { useIntl } from "react-intl";
 
 import { getUserName } from "../../../misc";
-import { CustomerDetails_user } from "../../types/CustomerDetails";
 import CustomerAddresses from "../CustomerAddresses";
 import CustomerDetails from "../CustomerDetails";
 import CustomerInfo from "../CustomerInfo";
@@ -35,14 +37,14 @@ export interface CustomerDetailsPageFormData extends MetadataFormData {
 }
 
 export interface CustomerDetailsPageProps {
-  customer: CustomerDetails_user;
+  customer: CustomerDetailsQuery["user"];
   disabled: boolean;
   errors: AccountErrorFragment[];
   saveButtonBar: ConfirmButtonTransitionState;
   onBack: () => void;
   onSubmit: (
     data: CustomerDetailsPageFormData
-  ) => SubmitPromise<UpdateCustomer_customerUpdate_errors[]>;
+  ) => SubmitPromise<AccountErrorFragmentFragment[]>;
   onViewAllOrdersClick: () => void;
   onRowClick: (id: string) => void;
   onAddressManageClick: () => void;
