@@ -1,7 +1,7 @@
 import { Menu, MenuItem, Typography } from "@material-ui/core";
-import { CollectionList_collections_edges_node_channelListings } from "@saleor/collections/types/CollectionList";
 import Hr from "@saleor/components/Hr";
 import StatusLabel from "@saleor/components/StatusLabel";
+import { CollectionFragmentFragment } from "@saleor/graphql";
 import useDateLocalize from "@saleor/hooks/useDateLocalize";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -9,7 +9,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { useStyles } from "./styles";
 
 type Channels = Pick<
-  CollectionList_collections_edges_node_channelListings,
+  CollectionFragmentFragment["channelListings"][0],
   "isPublished" | "publicationDate" | "channel"
 >;
 
