@@ -1,11 +1,12 @@
+import { MenuDetailsFragmentFragment } from "@saleor/graphql";
+
 import { menu } from "../../fixtures";
-import { MenuDetails_menu_items } from "../../types/MenuDetails";
 import { TreeOperation } from "../MenuItems";
 import { computeTree } from "./tree";
 
 // Readability FTW
 function innerTreeToString(
-  tree: MenuDetails_menu_items,
+  tree: MenuDetailsFragmentFragment["items"][0],
   level: number
 ): string {
   return (
@@ -18,7 +19,7 @@ function innerTreeToString(
     )
   );
 }
-function treeToString(tree: MenuDetails_menu_items[]): string {
+function treeToString(tree: MenuDetailsFragmentFragment["items"]): string {
   return tree.reduce((acc, node) => acc + innerTreeToString(node, 0), "");
 }
 
