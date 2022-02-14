@@ -1,22 +1,21 @@
 import { useUser } from "@saleor/auth";
 import { WindowTitle } from "@saleor/components/WindowTitle";
 import { DEFAULT_INITIAL_SEARCH_DATA } from "@saleor/config";
-import { useCustomerAddressesQuery } from "@saleor/graphql";
+import {
+  OrderFulfillmentApproveMutation,
+  OrderFulfillmentApproveMutationVariables,
+  OrderUpdateMutation,
+  OrderUpdateMutationVariables,
+  useCustomerAddressesQuery
+} from "@saleor/graphql";
 import useNavigator from "@saleor/hooks/useNavigator";
 import OrderCannotCancelOrderDialog from "@saleor/orders/components/OrderCannotCancelOrderDialog";
 import { OrderCustomerAddressesEditDialogOutput } from "@saleor/orders/components/OrderCustomerAddressesEditDialog/types";
 import OrderFulfillmentApproveDialog from "@saleor/orders/components/OrderFulfillmentApproveDialog";
 import OrderInvoiceEmailSendDialog from "@saleor/orders/components/OrderInvoiceEmailSendDialog";
-import {
-  OrderFulfillmentApprove,
-  OrderFulfillmentApproveVariables
-} from "@saleor/orders/types/OrderFulfillmentApprove";
-import {
-  OrderUpdate,
-  OrderUpdateVariables
-} from "@saleor/orders/types/OrderUpdate";
 import { OrderDiscountProvider } from "@saleor/products/components/OrderDiscountProviders/OrderDiscountProvider";
 import { OrderLineDiscountProvider } from "@saleor/products/components/OrderDiscountProviders/OrderLineDiscountProvider";
+import { useOrderVariantSearch } from "@saleor/searches/useOrderVariantSearch";
 import { PartialMutationProviderOutput } from "@saleor/types";
 import { mapEdgesToItems } from "@saleor/utils/maps";
 import { useWarehouseList } from "@saleor/warehouses/queries";
@@ -41,7 +40,6 @@ import OrderPaymentDialog from "../../../components/OrderPaymentDialog";
 import OrderPaymentVoidDialog from "../../../components/OrderPaymentVoidDialog";
 import OrderProductAddDialog from "../../../components/OrderProductAddDialog";
 import OrderShippingMethodEditDialog from "../../../components/OrderShippingMethodEditDialog";
-import { useOrderVariantSearch } from "../../../queries";
 import {
   orderFulfillUrl,
   orderListUrl,
@@ -61,7 +59,10 @@ interface OrderUnconfirmedDetailsProps {
   orderLineDelete: any;
   orderInvoiceRequest: any;
   handleSubmit: any;
-  orderUpdate: PartialMutationProviderOutput<OrderUpdate, OrderUpdateVariables>;
+  orderUpdate: PartialMutationProviderOutput<
+    OrderUpdateMutation,
+    OrderUpdateMutationVariables
+  >;
   orderCancel: any;
   orderShippingMethodUpdate: any;
   orderLinesAdd: any;
@@ -69,8 +70,8 @@ interface OrderUnconfirmedDetailsProps {
   orderVoid: any;
   orderPaymentCapture: any;
   orderFulfillmentApprove: PartialMutationProviderOutput<
-    OrderFulfillmentApprove,
-    OrderFulfillmentApproveVariables
+    OrderFulfillmentApproveMutation,
+    OrderFulfillmentApproveMutationVariables
   >;
   orderFulfillmentCancel: any;
   orderFulfillmentUpdateTracking: any;

@@ -4,6 +4,7 @@ import { Hr } from "@saleor/components/Hr";
 import Money from "@saleor/components/Money";
 import Skeleton from "@saleor/components/Skeleton";
 import StatusLabel from "@saleor/components/StatusLabel";
+import { OrderDetailsFragmentFragment } from "@saleor/graphql";
 import { Button, makeStyles } from "@saleor/macaw-ui";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -14,7 +15,6 @@ import {
   OrderDiscountType,
   OrderStatus
 } from "../../../types/globalTypes";
-import { OrderDetails_order } from "../../types/OrderDetails";
 import messages from "./messages";
 import {
   extractOrderGiftCardUsedAmount,
@@ -44,7 +44,7 @@ const useStyles = makeStyles(
 );
 
 interface OrderPaymentProps {
-  order: OrderDetails_order;
+  order: OrderDetailsFragmentFragment;
   onCapture: () => void;
   onMarkAsPaid: () => void;
   onRefund: () => void;

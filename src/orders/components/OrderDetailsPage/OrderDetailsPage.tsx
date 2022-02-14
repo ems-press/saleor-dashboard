@@ -10,6 +10,11 @@ import PageHeader from "@saleor/components/PageHeader";
 import PageTitleWithStatusChip from "@saleor/components/PageTitleWithStatusChip";
 import Savebar from "@saleor/components/Savebar";
 import Skeleton from "@saleor/components/Skeleton";
+import {
+  OrderDetailsFragmentFragment,
+  OrderDetailsQuery,
+  OrderStatus
+} from "@saleor/graphql";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import { sectionNames } from "@saleor/intl";
 import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
@@ -23,11 +28,6 @@ import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 
 import { getMutationErrors, maybe } from "../../../misc";
-import { OrderStatus } from "../../../types/globalTypes";
-import {
-  OrderDetails_order,
-  OrderDetails_shop
-} from "../../types/OrderDetails";
 import OrderCustomer from "../OrderCustomer";
 import OrderCustomerNote from "../OrderCustomerNote";
 import OrderDraftDetails from "../OrderDraftDetails/OrderDraftDetails";
@@ -57,8 +57,8 @@ const useStyles = makeStyles(
 );
 
 export interface OrderDetailsPageProps extends UserPermissionProps {
-  order: OrderDetails_order;
-  shop: OrderDetails_shop;
+  order: OrderDetailsFragmentFragment;
+  shop: OrderDetailsQuery["shop"];
   shippingMethods?: Array<{
     id: string;
     name: string;

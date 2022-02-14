@@ -1,19 +1,17 @@
 import { useUser } from "@saleor/auth";
 import { WindowTitle } from "@saleor/components/WindowTitle";
-import { useCustomerAddressesQuery } from "@saleor/graphql";
+import {
+  OrderFulfillmentApproveMutation,
+  OrderFulfillmentApproveMutationVariables,
+  OrderUpdateMutation,
+  OrderUpdateMutationVariables,
+  useCustomerAddressesQuery
+} from "@saleor/graphql";
 import useNavigator from "@saleor/hooks/useNavigator";
 import OrderCannotCancelOrderDialog from "@saleor/orders/components/OrderCannotCancelOrderDialog";
 import { OrderCustomerAddressesEditDialogOutput } from "@saleor/orders/components/OrderCustomerAddressesEditDialog/types";
 import OrderFulfillmentApproveDialog from "@saleor/orders/components/OrderFulfillmentApproveDialog";
 import OrderInvoiceEmailSendDialog from "@saleor/orders/components/OrderInvoiceEmailSendDialog";
-import {
-  OrderFulfillmentApprove,
-  OrderFulfillmentApproveVariables
-} from "@saleor/orders/types/OrderFulfillmentApprove";
-import {
-  OrderUpdate,
-  OrderUpdateVariables
-} from "@saleor/orders/types/OrderUpdate";
 import { PartialMutationProviderOutput } from "@saleor/types";
 import { mapEdgesToItems } from "@saleor/utils/maps";
 import { useWarehouseList } from "@saleor/warehouses/queries";
@@ -53,14 +51,17 @@ interface OrderNormalDetailsProps {
   orderAddNote: any;
   orderInvoiceRequest: any;
   handleSubmit: any;
-  orderUpdate: PartialMutationProviderOutput<OrderUpdate, OrderUpdateVariables>;
+  orderUpdate: PartialMutationProviderOutput<
+    OrderUpdateMutation,
+    OrderUpdateMutationVariables
+  >;
   orderCancel: any;
   orderPaymentMarkAsPaid: any;
   orderVoid: any;
   orderPaymentCapture: any;
   orderFulfillmentApprove: PartialMutationProviderOutput<
-    OrderFulfillmentApprove,
-    OrderFulfillmentApproveVariables
+    OrderFulfillmentApproveMutation,
+    OrderFulfillmentApproveMutationVariables
   >;
   orderFulfillmentCancel: any;
   orderFulfillmentUpdateTracking: any;

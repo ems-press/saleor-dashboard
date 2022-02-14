@@ -13,6 +13,7 @@ import Skeleton from "@saleor/components/Skeleton";
 import StatusLabel from "@saleor/components/StatusLabel";
 import TableCellHeader from "@saleor/components/TableCellHeader";
 import TablePagination from "@saleor/components/TablePagination";
+import { OrderListQuery } from "@saleor/graphql";
 import { makeStyles } from "@saleor/macaw-ui";
 import {
   maybe,
@@ -21,12 +22,10 @@ import {
   transformPaymentStatus
 } from "@saleor/misc";
 import { OrderListUrlSortField } from "@saleor/orders/urls";
-import { ListProps, SortPage } from "@saleor/types";
+import { ListProps, RelayToFlat, SortPage } from "@saleor/types";
 import { getArrowDirection } from "@saleor/utils/sort";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-
-import { OrderList_orders_edges_node } from "../../types/OrderList";
 
 const useStyles = makeStyles(
   theme => {
@@ -69,7 +68,7 @@ const useStyles = makeStyles(
 );
 
 interface OrderListProps extends ListProps, SortPage<OrderListUrlSortField> {
-  orders: OrderList_orders_edges_node[];
+  orders: RelayToFlat<OrderListQuery["orders"]>;
 }
 
 const numberOfColumns = 6;
