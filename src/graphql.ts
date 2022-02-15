@@ -11935,9 +11935,9 @@ export type ShopOrderSettingsFragmentFragment = { __typename: 'Shop', fulfillmen
 
 export type PageInfoFragmentFragment = { __typename: 'PageInfo', endCursor: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor: string | null };
 
-export type PageTypeFragmentFragment = { __typename: 'PageType', id: string, name: string };
+export type PageTypeFragmentFragment = { __typename: 'PageType', id: string, name: string, hasPages: boolean | null };
 
-export type PageTypeDetailsFragmentFragment = { __typename: 'PageType', id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> };
+export type PageTypeDetailsFragmentFragment = { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> };
 
 export type PageFragmentFragment = { __typename: 'Page', id: string, title: string, slug: string, isPublished: boolean };
 
@@ -12581,14 +12581,14 @@ export type PageTypeUpdateMutationVariables = Exact<{
 }>;
 
 
-export type PageTypeUpdateMutation = { __typename: 'Mutation', pageTypeUpdate: { __typename: 'PageTypeUpdate', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
+export type PageTypeUpdateMutation = { __typename: 'Mutation', pageTypeUpdate: { __typename: 'PageTypeUpdate', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
 
 export type PageTypeCreateMutationVariables = Exact<{
   input: PageTypeCreateInput;
 }>;
 
 
-export type PageTypeCreateMutation = { __typename: 'Mutation', pageTypeCreate: { __typename: 'PageTypeCreate', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
+export type PageTypeCreateMutation = { __typename: 'Mutation', pageTypeCreate: { __typename: 'PageTypeCreate', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
 
 export type AssignPageAttributeMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -12596,7 +12596,7 @@ export type AssignPageAttributeMutationVariables = Exact<{
 }>;
 
 
-export type AssignPageAttributeMutation = { __typename: 'Mutation', pageAttributeAssign: { __typename: 'PageAttributeAssign', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
+export type AssignPageAttributeMutation = { __typename: 'Mutation', pageAttributeAssign: { __typename: 'PageAttributeAssign', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
 
 export type UnassignPageAttributeMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -12604,7 +12604,7 @@ export type UnassignPageAttributeMutationVariables = Exact<{
 }>;
 
 
-export type UnassignPageAttributeMutation = { __typename: 'Mutation', pageAttributeUnassign: { __typename: 'PageAttributeUnassign', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
+export type UnassignPageAttributeMutation = { __typename: 'Mutation', pageAttributeUnassign: { __typename: 'PageAttributeUnassign', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
 
 export type PageTypeDeleteMutationVariables = Exact<{
   id: Scalars['ID'];
@@ -12626,7 +12626,7 @@ export type PageTypeAttributeReorderMutationVariables = Exact<{
 }>;
 
 
-export type PageTypeAttributeReorderMutation = { __typename: 'Mutation', pageTypeReorderAttributes: { __typename: 'PageTypeReorderAttributes', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
+export type PageTypeAttributeReorderMutation = { __typename: 'Mutation', pageTypeReorderAttributes: { __typename: 'PageTypeReorderAttributes', errors: Array<{ __typename: 'PageError', code: PageErrorCode, field: string | null }>, pageType: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null } | null };
 
 export type PageTypeListQueryVariables = Exact<{
   after?: InputMaybe<Scalars['String']>;
@@ -12638,14 +12638,14 @@ export type PageTypeListQueryVariables = Exact<{
 }>;
 
 
-export type PageTypeListQuery = { __typename: 'Query', pageTypes: { __typename: 'PageTypeCountableConnection', edges: Array<{ __typename: 'PageTypeCountableEdge', node: { __typename: 'PageType', hasPages: boolean | null, id: string, name: string } }>, pageInfo: { __typename: 'PageInfo', endCursor: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor: string | null } } | null };
+export type PageTypeListQuery = { __typename: 'Query', pageTypes: { __typename: 'PageTypeCountableConnection', edges: Array<{ __typename: 'PageTypeCountableEdge', node: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null } }>, pageInfo: { __typename: 'PageInfo', endCursor: string | null, hasNextPage: boolean, hasPreviousPage: boolean, startCursor: string | null } } | null };
 
 export type PageTypeDetailsQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type PageTypeDetailsQuery = { __typename: 'Query', pageType: { __typename: 'PageType', hasPages: boolean | null, id: string, name: string, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null };
+export type PageTypeDetailsQuery = { __typename: 'Query', pageType: { __typename: 'PageType', id: string, name: string, hasPages: boolean | null, attributes: Array<{ __typename: 'Attribute', id: string, name: string | null, slug: string | null, type: AttributeTypeEnum | null, visibleInStorefront: boolean, filterableInDashboard: boolean, filterableInStorefront: boolean, unit: MeasurementUnitsEnum | null, inputType: AttributeInputTypeEnum | null } | null> | null, metadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null>, privateMetadata: Array<{ __typename: 'MetadataItem', key: string, value: string } | null> } | null };
 
 export type PageCreateMutationVariables = Exact<{
   input: PageCreateInput;
@@ -15095,6 +15095,7 @@ export const PageTypeFragmentFragmentDoc = gql`
     fragment PageTypeFragment on PageType {
   id
   name
+  hasPages
 }
     `;
 export const PageTypeDetailsFragmentFragmentDoc = gql`
@@ -23142,7 +23143,6 @@ export const PageTypeListDocument = gql`
     edges {
       node {
         ...PageTypeFragment
-        hasPages
       }
     }
     pageInfo {
@@ -23189,7 +23189,6 @@ export const PageTypeDetailsDocument = gql`
     query PageTypeDetails($id: ID!) {
   pageType(id: $id) {
     ...PageTypeDetailsFragment
-    hasPages
   }
 }
     ${PageTypeDetailsFragmentFragmentDoc}`;
