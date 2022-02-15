@@ -15,31 +15,37 @@ export const pageFragment = gql`
   }
 `;
 
+export const pageSelectedAttribute = gql`
+  fragment PageSelectedAttribute on SelectedAttribute {
+    attribute {
+      id
+      slug
+      name
+      inputType
+      entityType
+      valueRequired
+      unit
+      choices(
+        first: $firstValues
+        after: $afterValues
+        last: $lastValues
+        before: $beforeValues
+      ) {
+        ...AttributeValueListFragment
+      }
+    }
+    values {
+      ...AttributeValueFragment
+    }
+  }
+`;
+
 export const pageAttributesFragment = gql`
   ${attributeValueFragment}
   ${attributeValueListFragment}
   fragment PageAttributesFragment on Page {
     attributes {
-      attribute {
-        id
-        slug
-        name
-        inputType
-        entityType
-        valueRequired
-        unit
-        choices(
-          first: $firstValues
-          after: $afterValues
-          last: $lastValues
-          before: $beforeValues
-        ) {
-          ...AttributeValueListFragment
-        }
-      }
-      values {
-        ...AttributeValueFragment
-      }
+      ...PageSelectedAttribute
     }
     pageType {
       id
