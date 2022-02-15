@@ -8,14 +8,18 @@ import PageHeader from "@saleor/components/PageHeader";
 import Savebar from "@saleor/components/Savebar";
 import Skeleton from "@saleor/components/Skeleton";
 import { OrderDetailsFragmentFragment } from "@saleor/graphql";
+import { SearchCustomersQuery } from "@saleor/graphql";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import { sectionNames } from "@saleor/intl";
 import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
 import { Backlink } from "@saleor/macaw-ui";
 import { makeStyles } from "@saleor/macaw-ui";
 import DraftOrderChannelSectionCard from "@saleor/orders/components/DraftOrderChannelSectionCard";
-import { SearchCustomers_search_edges_node } from "@saleor/searches/types/SearchCustomers";
-import { FetchMoreProps, UserPermissionProps } from "@saleor/types";
+import {
+  FetchMoreProps,
+  RelayToFlat,
+  UserPermissionProps
+} from "@saleor/types";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -42,7 +46,7 @@ export interface OrderDraftPageProps
     UserPermissionProps {
   disabled: boolean;
   order: OrderDetailsFragmentFragment;
-  users: SearchCustomers_search_edges_node[];
+  users: RelayToFlat<SearchCustomersQuery["search"]>;
   usersLoading: boolean;
   saveButtonBarState: ConfirmButtonTransitionState;
   fetchUsers: (query: string) => void;
