@@ -190,6 +190,29 @@ export const productVariantAttributesFragment = gql`
   }
 `;
 
+export const productDetailsVariant = gql`
+  fragment ProductDetailsVariant on ProductVariant {
+    id
+    sku
+    name
+    margin
+    media {
+      url(size: 200)
+    }
+    stocks {
+      ...StockFragment
+    }
+    trackInventory
+    preorder {
+      ...PreorderFragment
+    }
+    channelListings {
+      ...ChannelListingProductVariantFragment
+    }
+    quantityLimitPerCustomer
+  }
+`;
+
 export const productFragmentDetails = gql`
   ${fragmentPreorder}
   ${fragmentProductMedia}
@@ -200,6 +223,7 @@ export const productFragmentDetails = gql`
   ${taxTypeFragment}
   ${channelListingProductFragment}
   ${channelListingProductVariantFragment}
+  ${productDetailsVariant}
   fragment Product on Product {
     ...ProductVariantAttributesFragment
     ...MetadataFragment
@@ -229,24 +253,7 @@ export const productFragmentDetails = gql`
     }
     isAvailable
     variants {
-      id
-      sku
-      name
-      margin
-      media {
-        url(size: 200)
-      }
-      stocks {
-        ...StockFragment
-      }
-      trackInventory
-      preorder {
-        ...PreorderFragment
-      }
-      channelListings {
-        ...ChannelListingProductVariantFragment
-      }
-      quantityLimitPerCustomer
+      ...ProductDetailsVariant
     }
     productType {
       id
