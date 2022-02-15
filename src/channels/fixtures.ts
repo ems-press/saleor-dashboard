@@ -1,9 +1,9 @@
 import {
   ChannelDetailsFragmentFragment,
   ChannelErrorCode,
-  ChannelErrorFragmentFragment
+  ChannelErrorFragmentFragment,
+  ProductFragment
 } from "@saleor/graphql";
-import { ProductDetails_product_channelListings } from "@saleor/products/types/ProductDetails";
 
 export const channelCreateErrors: ChannelErrorFragmentFragment[] = [
   {
@@ -130,7 +130,7 @@ export const channel: ChannelDetailsFragmentFragment = {
   }
 };
 
-export const productChannels: ProductDetails_product_channelListings[] = [
+export const productChannels: ProductFragment["channelListings"] = [
   {
     __typename: "ProductChannelListing",
     availableForPurchase: null,
