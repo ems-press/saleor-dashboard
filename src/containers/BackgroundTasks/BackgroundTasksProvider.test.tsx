@@ -1,5 +1,4 @@
-import { CheckExportFileStatusQuery } from "@saleor/graphql";
-import { JobStatusEnum } from "@saleor/types/globalTypes";
+import { CheckExportFileStatusQuery, JobStatusEnum } from "@saleor/graphql";
 import { renderHook } from "@testing-library/react-hooks";
 import { createMockClient, RequestHandlerResponse } from "mock-apollo-client";
 

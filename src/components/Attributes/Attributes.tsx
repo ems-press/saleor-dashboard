@@ -6,14 +6,14 @@ import Hr from "@saleor/components/Hr";
 import { AttributeValueFragment } from "@saleor/fragments/types/AttributeValueFragment";
 import { PageErrorWithAttributesFragment } from "@saleor/fragments/types/PageErrorWithAttributesFragment";
 import { ProductErrorWithAttributesFragment } from "@saleor/fragments/types/ProductErrorWithAttributesFragment";
-import { FormsetAtomicData } from "@saleor/hooks/useFormset";
-import { IconButton, makeStyles } from "@saleor/macaw-ui";
-import { FetchMoreProps } from "@saleor/types";
 import {
   AttributeEntityTypeEnum,
   AttributeInputTypeEnum,
   MeasurementUnitsEnum
-} from "@saleor/types/globalTypes";
+} from "@saleor/graphql";
+import { FormsetAtomicData } from "@saleor/hooks/useFormset";
+import { IconButton, makeStyles } from "@saleor/macaw-ui";
+import { FetchMoreProps } from "@saleor/types";
 import classNames from "classnames";
 import React from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";

@@ -2,9 +2,10 @@ import { DialogContentText } from "@material-ui/core";
 import ActionDialog from "@saleor/components/ActionDialog";
 import useAppChannel from "@saleor/components/AppLayout/AppChannelContext";
 import NotFoundPage from "@saleor/components/NotFoundPage";
-import { DEFAULT_INITIAL_SEARCH_DATA } from "@saleor/config";
-import { PAGINATE_BY } from "@saleor/config";
+import { DEFAULT_INITIAL_SEARCH_DATA, PAGINATE_BY } from "@saleor/config";
 import {
+  CountryCode,
+  ShippingZoneUpdateInput,
   useDeleteShippingRateMutation,
   useDeleteShippingZoneMutation,
   useShippingZoneQuery,
@@ -38,10 +39,6 @@ import {
   findValueInEnum,
   getStringOrPlaceholder
 } from "../../../misc";
-import {
-  CountryCode,
-  ShippingZoneUpdateInput
-} from "../../../types/globalTypes";
 import ShippingZoneDetailsPage from "../../components/ShippingZoneDetailsPage";
 import { ShippingZoneUpdateFormData } from "../../components/ShippingZoneDetailsPage/types";
 import {

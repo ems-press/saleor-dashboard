@@ -1,4 +1,4 @@
-import { ShippingErrorCode } from "@saleor/types/globalTypes";
+import { ShippingErrorCode } from "@saleor/graphql";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 

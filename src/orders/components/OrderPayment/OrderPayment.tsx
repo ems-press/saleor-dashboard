@@ -4,17 +4,17 @@ import { Hr } from "@saleor/components/Hr";
 import Money from "@saleor/components/Money";
 import Skeleton from "@saleor/components/Skeleton";
 import StatusLabel from "@saleor/components/StatusLabel";
-import { OrderDetailsFragmentFragment } from "@saleor/graphql";
+import {
+  OrderAction,
+  OrderDetailsFragmentFragment,
+  OrderDiscountType,
+  OrderStatus
+} from "@saleor/graphql";
 import { Button, makeStyles } from "@saleor/macaw-ui";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import { maybe, transformPaymentStatus } from "../../../misc";
-import {
-  OrderAction,
-  OrderDiscountType,
-  OrderStatus
-} from "../../../types/globalTypes";
 import messages from "./messages";
 import {
   extractOrderGiftCardUsedAmount,

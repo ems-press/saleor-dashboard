@@ -6,6 +6,7 @@ import {
 } from "@apollo/client";
 import { BatchHttpLink } from "@apollo/client/link/batch-http";
 import DemoBanner from "@saleor/components/DemoBanner";
+import { PermissionEnum } from "@saleor/graphql";
 import useAppState from "@saleor/hooks/useAppState";
 import { ThemeProvider } from "@saleor/macaw-ui";
 import { createFetch, createSaleorClient, SaleorProvider } from "@saleor/sdk";
@@ -50,8 +51,7 @@ import { CustomerSection } from "./customers";
 import DiscountSection from "./discounts";
 import GiftCardSection from "./giftCards";
 import { giftCardsSectionUrlName } from "./giftCards/urls";
-import { TypedTypePolicies } from "./graphql";
-import { introspectionQueryResultData } from "./graphql";
+import { introspectionQueryResultData, TypedTypePolicies } from "./graphql";
 import HomePage from "./home";
 import { commonMessages } from "./intl";
 import NavigationSection from "./navigation";
@@ -71,7 +71,6 @@ import StaffSection from "./staff";
 import TaxesSection from "./taxes";
 import themeOverrides from "./themeOverrides";
 import TranslationsSection from "./translations";
-import { PermissionEnum } from "./types/globalTypes";
 import WarehouseSection from "./warehouses";
 import { warehouseSection } from "./warehouses/urls";
 

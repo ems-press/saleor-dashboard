@@ -13,10 +13,10 @@ import Money from "@saleor/components/Money";
 import Skeleton from "@saleor/components/Skeleton";
 import TableCellAvatar from "@saleor/components/TableCellAvatar";
 import {
+  OrderDetailsFragmentFragment,
   OrderErrorFragmentFragment,
   OrderLineFragmentFragment
 } from "@saleor/graphql";
-import { OrderDetailsFragmentFragment } from "@saleor/graphql";
 import { FormsetChange } from "@saleor/hooks/useFormset";
 import { makeStyles } from "@saleor/macaw-ui";
 import { renderCollection } from "@saleor/misc";

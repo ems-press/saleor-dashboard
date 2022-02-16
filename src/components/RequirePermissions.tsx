@@ -1,5 +1,5 @@
 import { User_userPermissions } from "@saleor/fragments/types/User";
-import { PermissionEnum } from "@saleor/types/globalTypes";
+import { PermissionEnum } from "@saleor/graphql";
 import React from "react";
 
 export function hasPermissions(

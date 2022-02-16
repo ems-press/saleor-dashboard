@@ -3,8 +3,8 @@ import { useUser } from "@saleor/auth";
 import CardTitle from "@saleor/components/CardTitle";
 import Hr from "@saleor/components/Hr";
 import RequirePermissions from "@saleor/components/RequirePermissions";
+import { PermissionEnum } from "@saleor/graphql";
 import { Button } from "@saleor/macaw-ui";
-import { PermissionEnum } from "@saleor/types/globalTypes";
 import React from "react";
 import { useIntl } from "react-intl";
 

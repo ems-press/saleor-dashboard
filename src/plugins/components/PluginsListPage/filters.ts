@@ -1,8 +1,8 @@
 import { IFilter, IFilterElement } from "@saleor/components/Filter";
 import { statusLabelMessages } from "@saleor/components/StatusLabel/messages";
+import { PluginConfigurationType } from "@saleor/graphql";
 import { sectionNames } from "@saleor/intl";
 import { AutocompleteFilterOpts, FilterOpts } from "@saleor/types";
-import { PluginConfigurationType } from "@saleor/types/globalTypes";
 import {
   createAutocompleteField,
   createBooleanField,
