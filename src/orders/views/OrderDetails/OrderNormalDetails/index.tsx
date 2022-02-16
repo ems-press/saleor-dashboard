@@ -6,7 +6,8 @@ import {
   OrderFulfillmentApproveMutationVariables,
   OrderUpdateMutation,
   OrderUpdateMutationVariables,
-  useCustomerAddressesQuery
+  useCustomerAddressesQuery,
+  useWarehouseListQuery
 } from "@saleor/graphql";
 import useNavigator from "@saleor/hooks/useNavigator";
 import OrderCannotCancelOrderDialog from "@saleor/orders/components/OrderCannotCancelOrderDialog";
@@ -15,7 +16,6 @@ import OrderFulfillmentApproveDialog from "@saleor/orders/components/OrderFulfil
 import OrderInvoiceEmailSendDialog from "@saleor/orders/components/OrderInvoiceEmailSendDialog";
 import { PartialMutationProviderOutput } from "@saleor/types";
 import { mapEdgesToItems } from "@saleor/utils/maps";
-import { useWarehouseList } from "@saleor/warehouses/queries";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -98,7 +98,7 @@ export const OrderNormalDetails: React.FC<OrderNormalDetailsProps> = ({
   const navigate = useNavigator();
   const { user } = useUser();
 
-  const warehouses = useWarehouseList({
+  const warehouses = useWarehouseListQuery({
     displayLoader: true,
     variables: {
       first: 30

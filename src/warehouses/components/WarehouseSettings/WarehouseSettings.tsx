@@ -5,10 +5,13 @@ import { FormSpacer } from "@saleor/components/FormSpacer";
 import Link from "@saleor/components/Link";
 import { RadioGroupField } from "@saleor/components/RadioGroupField";
 import Skeleton from "@saleor/components/Skeleton";
-import { WarehouseClickAndCollectOptionEnum } from "@saleor/graphql";
+import {
+  WarehouseClickAndCollectOptionEnum,
+  WarehouseWithShippingFragmentFragment
+} from "@saleor/graphql";
 import { makeStyles } from "@saleor/macaw-ui";
 import { renderCollection } from "@saleor/misc";
-import { WarehouseDetails_warehouse_shippingZones_edges_node } from "@saleor/warehouses/types/WarehouseDetails";
+import { RelayToFlat } from "@saleor/types";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -16,7 +19,7 @@ import { WarehouseDetailsPageFormData } from "./../WarehouseDetailsPage";
 import messages from "./messages";
 
 export interface WarehouseSettingsProps {
-  zones: WarehouseDetails_warehouse_shippingZones_edges_node[];
+  zones: RelayToFlat<WarehouseWithShippingFragmentFragment["shippingZones"]>;
   disabled: boolean;
   data: WarehouseDetailsPageFormData;
   onShippingZoneClick: (id: string) => void;
