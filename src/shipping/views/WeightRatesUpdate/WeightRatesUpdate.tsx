@@ -6,6 +6,14 @@ import ChannelsAvailabilityDialog from "@saleor/components/ChannelsAvailabilityD
 import { WindowTitle } from "@saleor/components/WindowTitle";
 import { DEFAULT_INITIAL_SEARCH_DATA } from "@saleor/config";
 import { PAGINATE_BY } from "@saleor/config";
+import {
+  useDeleteShippingRateMutation,
+  useShippingMethodChannelListingUpdateMutation,
+  useShippingPriceExcludeProductMutation,
+  useShippingPriceRemoveProductFromExcludeMutation,
+  useShippingZoneQuery,
+  useUpdateShippingRateMutation
+} from "@saleor/graphql";
 import useBulkActions from "@saleor/hooks/useBulkActions";
 import useChannels from "@saleor/hooks/useChannels";
 import useLocalPaginator, {
@@ -31,14 +39,6 @@ import {
   getShippingMethodChannelVariables,
   getUpdateShippingWeightRateVariables
 } from "@saleor/shipping/handlers";
-import {
-  useShippingMethodChannelListingUpdate,
-  useShippingPriceExcludeProduct,
-  useShippingPriceRemoveProductsFromExclude,
-  useShippingRateDelete,
-  useShippingRateUpdate
-} from "@saleor/shipping/mutations";
-import { useShippingZone } from "@saleor/shipping/queries";
 import {
   ShippingRateUrlDialog,
   ShippingRateUrlQueryParams,
@@ -88,7 +88,7 @@ export const WeightRatesUpdate: React.FC<WeightRatesUpdateProps> = ({
   );
   const paginate = useLocalPaginator(setPaginationState);
 
-  const { data, loading, refetch } = useShippingZone({
+  const { data, loading, refetch } = useShippingZoneQuery({
     displayLoader: true,
     variables: { id, ...paginationState }
   });
@@ -169,12 +169,12 @@ export const WeightRatesUpdate: React.FC<WeightRatesUpdateProps> = ({
   const [
     updateShippingMethodChannelListing,
     updateShippingMethodChannelListingOpts
-  ] = useShippingMethodChannelListingUpdate({});
+  ] = useShippingMethodChannelListingUpdateMutation({});
 
   const [
     unassignProduct,
     unassignProductOpts
-  ] = useShippingPriceRemoveProductsFromExclude({
+  ] = useShippingPriceRemoveProductFromExcludeMutation({
     onCompleted: data => {
       if (data.shippingPriceRemoveProductFromExclude.errors.length === 0) {
         handleSuccess();
@@ -184,7 +184,10 @@ export const WeightRatesUpdate: React.FC<WeightRatesUpdateProps> = ({
     }
   });
 
-  const [assignProduct, assignProductOpts] = useShippingPriceExcludeProduct({
+  const [
+    assignProduct,
+    assignProductOpts
+  ] = useShippingPriceExcludeProductMutation({
     onCompleted: data => {
       if (data.shippingPriceExcludeProducts.errors.length === 0) {
         handleSuccess();
@@ -217,9 +220,10 @@ export const WeightRatesUpdate: React.FC<WeightRatesUpdateProps> = ({
     { formId: WEIGHT_RATES_UPDATE_FORM_ID }
   );
 
-  const [updateShippingRate, updateShippingRateOpts] = useShippingRateUpdate(
-    {}
-  );
+  const [
+    updateShippingRate,
+    updateShippingRateOpts
+  ] = useUpdateShippingRateMutation({});
 
   const handleSuccess = () => {
     notify({
@@ -228,7 +232,10 @@ export const WeightRatesUpdate: React.FC<WeightRatesUpdateProps> = ({
     });
   };
 
-  const [deleteShippingRate, deleteShippingRateOpts] = useShippingRateDelete({
+  const [
+    deleteShippingRate,
+    deleteShippingRateOpts
+  ] = useDeleteShippingRateMutation({
     onCompleted: data => {
       if (data.shippingPriceDelete.errors.length === 0) {
         handleSuccess();

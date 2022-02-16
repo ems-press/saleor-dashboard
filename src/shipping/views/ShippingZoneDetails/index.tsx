@@ -4,6 +4,13 @@ import useAppChannel from "@saleor/components/AppLayout/AppChannelContext";
 import NotFoundPage from "@saleor/components/NotFoundPage";
 import { DEFAULT_INITIAL_SEARCH_DATA } from "@saleor/config";
 import { PAGINATE_BY } from "@saleor/config";
+import {
+  useDeleteShippingRateMutation,
+  useDeleteShippingZoneMutation,
+  useShippingZoneQuery,
+  useUpdateShippingZoneMutation,
+  useWarehouseCreateMutation
+} from "@saleor/graphql";
 import { useLocalPaginationState } from "@saleor/hooks/useLocalPaginator";
 import useNavigator from "@saleor/hooks/useNavigator";
 import useNotifier from "@saleor/hooks/useNotifier";
@@ -14,11 +21,6 @@ import useWarehouseSearch from "@saleor/searches/useWarehouseSearch";
 import DeleteShippingRateDialog from "@saleor/shipping/components/DeleteShippingRateDialog";
 import ShippingZoneAddWarehouseDialog from "@saleor/shipping/components/ShippingZoneAddWarehouseDialog";
 import ShippingZoneCountriesAssignDialog from "@saleor/shipping/components/ShippingZoneCountriesAssignDialog";
-import {
-  useShippingRateDelete,
-  useShippingZoneDelete,
-  useShippingZoneUpdate
-} from "@saleor/shipping/mutations";
 import { arrayDiff } from "@saleor/utils/arrays";
 import createDialogActionHandlers from "@saleor/utils/handlers/dialogActionHandlers";
 import createMetadataUpdateHandler from "@saleor/utils/handlers/metadataUpdateHandler";
@@ -27,7 +29,6 @@ import {
   useMetadataUpdate,
   usePrivateMetadataUpdate
 } from "@saleor/utils/metadata/updateMetadata";
-import { useWarehouseCreate } from "@saleor/warehouses/mutations";
 import { diff } from "fast-array-diff";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -43,7 +44,6 @@ import {
 } from "../../../types/globalTypes";
 import ShippingZoneDetailsPage from "../../components/ShippingZoneDetailsPage";
 import { ShippingZoneUpdateFormData } from "../../components/ShippingZoneDetailsPage/types";
-import { useShippingZone } from "../../queries";
 import {
   shippingPriceRatesEditUrl,
   shippingPriceRatesUrl,
@@ -77,7 +77,7 @@ const ShippingZoneDetails: React.FC<ShippingZoneDetailsProps> = ({
     }
   );
 
-  const { data, loading } = useShippingZone({
+  const { data, loading } = useShippingZoneQuery({
     displayLoader: true,
     variables: { id, ...paginationState }
   });
@@ -89,7 +89,10 @@ const ShippingZoneDetails: React.FC<ShippingZoneDetailsProps> = ({
   >(navigate, params => shippingZoneUrl(id, params), params);
   const rate = data?.shippingZone?.shippingMethods?.find(getById(params.id));
 
-  const [deleteShippingRate, deleteShippingRateOpts] = useShippingRateDelete({
+  const [
+    deleteShippingRate,
+    deleteShippingRateOpts
+  ] = useDeleteShippingRateMutation({
     onCompleted: data => {
       if (data.shippingPriceDelete.errors.length === 0) {
         notify({
@@ -101,7 +104,10 @@ const ShippingZoneDetails: React.FC<ShippingZoneDetailsProps> = ({
     }
   });
 
-  const [deleteShippingZone, deleteShippingZoneOpts] = useShippingZoneDelete({
+  const [
+    deleteShippingZone,
+    deleteShippingZoneOpts
+  ] = useDeleteShippingZoneMutation({
     onCompleted: data => {
       if (data.shippingZoneDelete.errors.length === 0) {
         notify({
@@ -113,7 +119,10 @@ const ShippingZoneDetails: React.FC<ShippingZoneDetailsProps> = ({
     }
   });
 
-  const [updateShippingZone, updateShippingZoneOpts] = useShippingZoneUpdate({
+  const [
+    updateShippingZone,
+    updateShippingZoneOpts
+  ] = useUpdateShippingZoneMutation({
     onCompleted: data => {
       if (data.shippingZoneUpdate.errors.length === 0) {
         notify({
@@ -125,7 +134,7 @@ const ShippingZoneDetails: React.FC<ShippingZoneDetailsProps> = ({
     }
   });
 
-  const [createWarehouse, createWarehouseOpts] = useWarehouseCreate({
+  const [createWarehouse, createWarehouseOpts] = useWarehouseCreateMutation({
     onCompleted: data => {
       if (data.createWarehouse.errors.length === 0) {
         notify({
