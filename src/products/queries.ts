@@ -78,14 +78,14 @@ export const productListQuery = gql`
     ) {
       edges {
         node {
-          ...ProductFragment
+          ...ProductWithChannelListings
           updatedAt
           attributes {
             attribute {
               id
             }
             values {
-              ...AttributeValueFragment
+              ...AttributeValue
             }
           }
         }
@@ -121,7 +121,7 @@ export const productDetailsQuery = gql`
       ...Product
     }
     taxTypes {
-      ...TaxTypeFragment
+      ...TaxType
     }
   }
 `;
@@ -152,11 +152,11 @@ export const productTypeQuery = gql`
           last: $lastValues
           before: $beforeValues
         ) {
-          ...AttributeValueListFragment
+          ...AttributeValueList
         }
       }
       taxType {
-        ...TaxTypeFragment
+        ...TaxType
       }
     }
   }
@@ -203,12 +203,12 @@ export const productVariantCreateQuery = gql`
         selectionVariantAttributes: variantAttributes(
           variantSelection: VARIANT_SELECTION
         ) {
-          ...VariantAttributeFragment
+          ...VariantAttribute
         }
         nonSelectionVariantAttributes: variantAttributes(
           variantSelection: NOT_VARIANT_SELECTION
         ) {
-          ...VariantAttributeFragment
+          ...VariantAttribute
         }
       }
       thumbnail {
@@ -269,7 +269,7 @@ export const availableInGridAttributes = gql`
         }
       }
       pageInfo {
-        ...PageInfoFragment
+        ...PageInfo
       }
       totalCount
     }
@@ -298,12 +298,12 @@ export const createMultipleVariantsData = gql`
     $beforeValues: String
   ) {
     product(id: $id) {
-      ...ProductVariantAttributesFragment
+      ...ProductVariantAttributes
     }
     warehouses(first: 20) {
       edges {
         node {
-          ...WarehouseFragment
+          ...Warehouse
         }
       }
     }

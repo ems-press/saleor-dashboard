@@ -12,7 +12,7 @@ import StatusLabel from "@saleor/components/StatusLabel";
 import TableCellHeader from "@saleor/components/TableCellHeader";
 import TableHead from "@saleor/components/TableHead";
 import TablePagination from "@saleor/components/TablePagination";
-import { PageFragmentFragment } from "@saleor/graphql";
+import { PageFragment } from "@saleor/graphql";
 import { makeStyles } from "@saleor/macaw-ui";
 import { maybe, renderCollection } from "@saleor/misc";
 import { PageListUrlSortField } from "@saleor/pages/urls";
@@ -25,7 +25,7 @@ export interface PageListProps
   extends ListProps,
     ListActions,
     SortPage<PageListUrlSortField> {
-  pages: PageFragmentFragment[];
+  pages: PageFragment[];
 }
 
 const useStyles = makeStyles(

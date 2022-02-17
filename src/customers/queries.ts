@@ -19,7 +19,7 @@ export const customerList = gql`
     ) {
       edges {
         node {
-          ...CustomerFragment
+          ...Customer
           orders {
             totalCount
           }
@@ -38,7 +38,7 @@ export const customerList = gql`
 export const customerDetails = gql`
   query CustomerDetails($id: ID!) {
     user(id: $id) {
-      ...CustomerDetailsFragment
+      ...CustomerDetails
       orders(last: 5) {
         edges {
           node {
@@ -70,7 +70,7 @@ export const customerDetails = gql`
 export const customerAddresses = gql`
   query CustomerAddresses($id: ID!) {
     user(id: $id) {
-      ...CustomerAddressesFragment
+      ...CustomerAddresses
     }
   }
 `;

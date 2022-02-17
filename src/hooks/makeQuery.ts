@@ -6,14 +6,16 @@ import {
   useQuery as useBaseQuery
 } from "@apollo/client";
 import { handleQueryAuthError, useUser } from "@saleor/auth";
-import { PermissionEnum } from "@saleor/graphql";
+import {
+  PermissionEnum,
+  PrefixedPermissions,
+  UserPermissionFragment
+} from "@saleor/graphql";
 import { RequireAtLeastOne } from "@saleor/misc";
 import { DocumentNode } from "graphql";
 import { useEffect } from "react";
 import { useIntl } from "react-intl";
 
-import { User_userPermissions } from "../fragments/types/User";
-import { PrefixedPermissions } from "../graphql";
 import useAppState from "./useAppState";
 import useNotifier from "./useNotifier";
 export { useLazyQuery, LazyQueryHookOptions } from "@apollo/client";
@@ -32,7 +34,7 @@ const allPermissions: Record<PrefixedPermissions, boolean> = Object.keys(
 );
 
 const getUserPermissions = (
-  userPermissions: User_userPermissions[]
+  userPermissions: UserPermissionFragment[]
 ): Record<PrefixedPermissions, boolean> =>
   userPermissions.reduce(
     (prev, permission) => ({

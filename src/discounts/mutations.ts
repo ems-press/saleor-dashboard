@@ -8,15 +8,15 @@ export const saleUpdate = gql`
   ) {
     saleUpdate(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
     }
     saleChannelListingUpdate(id: $id, input: $channelInput) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       sale {
-        ...SaleFragment
+        ...Sale
       }
     }
   }
@@ -33,10 +33,10 @@ export const saleCataloguesAdd = gql`
   ) {
     saleCataloguesAdd(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       sale {
-        ...SaleDetailsFragment
+        ...SaleDetails
       }
     }
   }
@@ -53,10 +53,10 @@ export const saleCataloguesRemove = gql`
   ) {
     saleCataloguesRemove(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       sale {
-        ...SaleDetailsFragment
+        ...SaleDetails
       }
     }
   }
@@ -66,10 +66,10 @@ export const saleCreate = gql`
   mutation SaleCreate($input: SaleInput!) {
     saleCreate(input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       sale {
-        ...SaleFragment
+        ...Sale
       }
     }
   }
@@ -79,7 +79,7 @@ export const saleDelete = gql`
   mutation SaleDelete($id: ID!) {
     saleDelete(id: $id) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
     }
   }
@@ -103,10 +103,10 @@ export const saleChannelListingUpdate = gql`
   ) {
     saleChannelListingUpdate(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       sale {
-        ...SaleFragment
+        ...Sale
       }
     }
   }
@@ -119,10 +119,10 @@ export const voucherChannelListingUpdate = gql`
   ) {
     voucherChannelListingUpdate(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       voucher {
-        ...VoucherFragment
+        ...Voucher
       }
     }
   }
@@ -132,10 +132,10 @@ export const voucherUpdate = gql`
   mutation VoucherUpdate($input: VoucherInput!, $id: ID!) {
     voucherUpdate(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       voucher {
-        ...VoucherFragment
+        ...Voucher
       }
     }
   }
@@ -152,10 +152,10 @@ export const voucherCataloguesAdd = gql`
   ) {
     voucherCataloguesAdd(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       voucher {
-        ...VoucherDetailsFragment
+        ...VoucherDetails
       }
     }
   }
@@ -172,10 +172,10 @@ export const voucherCataloguesRemove = gql`
   ) {
     voucherCataloguesRemove(id: $id, input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       voucher {
-        ...VoucherDetailsFragment
+        ...VoucherDetails
       }
     }
   }
@@ -185,10 +185,10 @@ export const voucherCreate = gql`
   mutation VoucherCreate($input: VoucherInput!) {
     voucherCreate(input: $input) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
       voucher {
-        ...VoucherFragment
+        ...Voucher
       }
     }
   }
@@ -198,7 +198,7 @@ export const voucherDelete = gql`
   mutation VoucherDelete($id: ID!) {
     voucherDelete(id: $id) {
       errors {
-        ...DiscountErrorFragment
+        ...DiscountError
       }
     }
   }

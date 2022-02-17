@@ -33,7 +33,7 @@ export const productTypeUpdateMutation = gql`
         message
       }
       productType {
-        ...ProductTypeDetailsFragment
+        ...ProductTypeDetails
       }
     }
   }
@@ -50,7 +50,7 @@ export const assignProductAttributeMutation = gql`
         message
       }
       productType {
-        ...ProductTypeDetailsFragment
+        ...ProductTypeDetails
       }
     }
   }
@@ -64,7 +64,7 @@ export const unassignProductAttributeMutation = gql`
         message
       }
       productType {
-        ...ProductTypeDetailsFragment
+        ...ProductTypeDetails
       }
     }
   }
@@ -78,7 +78,7 @@ export const productTypeCreateMutation = gql`
         message
       }
       productType {
-        ...ProductTypeDetailsFragment
+        ...ProductTypeDetails
       }
     }
   }
@@ -100,7 +100,7 @@ export const productTypeAttributeReorder = gql`
         message
       }
       productType {
-        ...ProductTypeDetailsFragment
+        ...ProductTypeDetails
       }
     }
   }
@@ -121,7 +121,7 @@ export const productAttributeAssignmentUpdate = gql`
         attributes
       }
       productType {
-        ...ProductTypeDetailsFragment
+        ...ProductTypeDetails
       }
     }
   }

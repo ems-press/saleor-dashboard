@@ -16,7 +16,7 @@ import Form from "@saleor/components/Form";
 import FormSpacer from "@saleor/components/FormSpacer";
 import Hr from "@saleor/components/Hr";
 import ResponsiveTable from "@saleor/components/ResponsiveTable";
-import { ShopInfo_shop_countries } from "@saleor/components/Shop/types/ShopInfo";
+import { CountryWithCodeFragment } from "@saleor/graphql";
 import { ConfirmButtonTransitionState } from "@saleor/macaw-ui";
 import useScrollableDialogStyle from "@saleor/styles/useScrollableDialogStyle";
 import { filter } from "fuzzaldrin";
@@ -33,7 +33,7 @@ interface FormData {
 
 export interface ShippingZoneCountriesAssignDialogProps {
   confirmButtonState: ConfirmButtonTransitionState;
-  countries: ShopInfo_shop_countries[];
+  countries: CountryWithCodeFragment[];
   initial: string[];
   isDefault: boolean;
   open: boolean;

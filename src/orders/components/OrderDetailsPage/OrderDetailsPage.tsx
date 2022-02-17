@@ -11,7 +11,7 @@ import PageTitleWithStatusChip from "@saleor/components/PageTitleWithStatusChip"
 import Savebar from "@saleor/components/Savebar";
 import Skeleton from "@saleor/components/Skeleton";
 import {
-  OrderDetailsFragmentFragment,
+  OrderDetailsFragment,
   OrderDetailsQuery,
   OrderStatus
 } from "@saleor/graphql";
@@ -59,7 +59,7 @@ const useStyles = makeStyles(
 );
 
 export interface OrderDetailsPageProps extends UserPermissionProps {
-  order: OrderDetailsFragmentFragment;
+  order: OrderDetailsFragment;
   shop: OrderDetailsQuery["shop"];
   shippingMethods?: Array<{
     id: string;

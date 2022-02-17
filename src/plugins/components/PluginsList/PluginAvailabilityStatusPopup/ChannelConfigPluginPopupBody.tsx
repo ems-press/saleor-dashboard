@@ -3,7 +3,7 @@ import CardSpacer from "@saleor/components/CardSpacer";
 import CollectionWithDividers from "@saleor/components/CollectionWithDividers";
 import StatusLabel from "@saleor/components/StatusLabel";
 import { statusLabelMessages } from "@saleor/components/StatusLabel/messages";
-import { PluginBaseFragment } from "@saleor/fragments/types/PluginBaseFragment";
+import { PluginBaseFragment } from "@saleor/graphql";
 import { makeStyles } from "@saleor/macaw-ui";
 import React from "react";
 import { useIntl } from "react-intl";

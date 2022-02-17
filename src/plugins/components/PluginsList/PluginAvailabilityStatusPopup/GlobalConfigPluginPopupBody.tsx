@@ -2,7 +2,7 @@ import { CardContent, Typography } from "@material-ui/core";
 import CardSpacer from "@saleor/components/CardSpacer";
 import StatusLabel from "@saleor/components/StatusLabel";
 import { statusLabelMessages } from "@saleor/components/StatusLabel/messages";
-import { PluginBaseFragment } from "@saleor/fragments/types/PluginBaseFragment";
+import { PluginBaseFragment } from "@saleor/graphql";
 import React from "react";
 import { useIntl } from "react-intl";
 

@@ -7,10 +7,7 @@ import Grid from "@saleor/components/Grid";
 import PageHeader from "@saleor/components/PageHeader";
 import Savebar from "@saleor/components/Savebar";
 import Skeleton from "@saleor/components/Skeleton";
-import {
-  OrderDetailsFragmentFragment,
-  SearchCustomersQuery
-} from "@saleor/graphql";
+import { OrderDetailsFragment, SearchCustomersQuery } from "@saleor/graphql";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import { sectionNames } from "@saleor/intl";
 import {
@@ -49,7 +46,7 @@ export interface OrderDraftPageProps
   extends FetchMoreProps,
     UserPermissionProps {
   disabled: boolean;
-  order: OrderDetailsFragmentFragment;
+  order: OrderDetailsFragment;
   users: RelayToFlat<SearchCustomersQuery["search"]>;
   usersLoading: boolean;
   saveButtonBarState: ConfirmButtonTransitionState;

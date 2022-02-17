@@ -136,7 +136,7 @@ export const updatePageTranslations = gql`
         message
       }
       page {
-        ...PageTranslationFragment
+        ...PageTranslation
       }
     }
   }

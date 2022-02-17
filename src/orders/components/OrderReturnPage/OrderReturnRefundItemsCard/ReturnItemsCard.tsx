@@ -13,9 +13,9 @@ import Money from "@saleor/components/Money";
 import Skeleton from "@saleor/components/Skeleton";
 import TableCellAvatar from "@saleor/components/TableCellAvatar";
 import {
-  OrderDetailsFragmentFragment,
-  OrderErrorFragmentFragment,
-  OrderLineFragmentFragment
+  OrderDetailsFragment,
+  OrderErrorFragment,
+  OrderLineFragment
 } from "@saleor/graphql";
 import { FormsetChange } from "@saleor/hooks/useFormset";
 import { makeStyles } from "@saleor/macaw-ui";
@@ -88,9 +88,9 @@ interface OrderReturnRefundLinesCardProps {
   onChangeQuantity: FormsetChange<number>;
   fulfilmentId?: string;
   canReplace?: boolean;
-  errors: OrderErrorFragmentFragment[];
-  lines: OrderLineFragmentFragment[];
-  order: OrderDetailsFragmentFragment;
+  errors: OrderErrorFragment[];
+  lines: OrderLineFragment[];
+  order: OrderDetailsFragment;
   itemsSelections: FormsetReplacementData;
   itemsQuantities: FormsetQuantityData;
   onChangeSelected: FormsetChange<boolean>;

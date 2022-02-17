@@ -6,7 +6,7 @@ import Skeleton from "@saleor/components/Skeleton";
 import StatusLabel from "@saleor/components/StatusLabel";
 import {
   OrderAction,
-  OrderDetailsFragmentFragment,
+  OrderDetailsFragment,
   OrderDiscountType,
   OrderStatus
 } from "@saleor/graphql";
@@ -44,7 +44,7 @@ const useStyles = makeStyles(
 );
 
 interface OrderPaymentProps {
-  order: OrderDetailsFragmentFragment;
+  order: OrderDetailsFragment;
   onCapture: () => void;
   onMarkAsPaid: () => void;
   onRefund: () => void;

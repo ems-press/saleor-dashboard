@@ -1,11 +1,11 @@
 import StatusChip from "@saleor/components/StatusChip";
-import { OrderDetailsFragmentFragment } from "@saleor/graphql";
+import { OrderDetailsFragment } from "@saleor/graphql";
 import { transformOrderStatus } from "@saleor/misc";
 import React from "react";
 import { useIntl } from "react-intl";
 
 interface OrderStatusChipProps {
-  order?: OrderDetailsFragmentFragment;
+  order?: OrderDetailsFragment;
 }
 
 const OrderStatusChip: React.FC<OrderStatusChipProps> = ({ order }) => {

@@ -1,11 +1,14 @@
 import { MultiAutocompleteChoiceType } from "@saleor/components/MultiAutocompleteSelectField";
-import { ShopInfo_shop_countries } from "@saleor/components/Shop/types/ShopInfo";
 import {
   ChoiceValue,
   SingleAutocompleteChoiceType
 } from "@saleor/components/SingleAutocompleteSelectField";
-import { MetadataItem } from "@saleor/fragments/types/MetadataItem";
-import { MetadataInput, SearchPagesQuery } from "@saleor/graphql";
+import {
+  CountryWithCodeFragment,
+  MetadataInput,
+  MetadataItem,
+  SearchPagesQuery
+} from "@saleor/graphql";
 import { getFullName } from "@saleor/misc";
 import { Node, RelayToFlat, SlugNode, TagNode } from "@saleor/types";
 
@@ -22,7 +25,7 @@ export function mapEdgesToItems<T>(
   return data?.edges?.map(({ node }) => node);
 }
 
-export function mapCountriesToChoices(countries: ShopInfo_shop_countries[]) {
+export function mapCountriesToChoices(countries: CountryWithCodeFragment[]) {
   return countries.map(country => ({
     label: country.country,
     value: country.code

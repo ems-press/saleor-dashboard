@@ -1,4 +1,4 @@
-import { PluginConfigurationBaseFragment } from "@saleor/fragments/types/PluginConfigurationBaseFragment";
+import { PluginConfigurationBaseFragment } from "@saleor/graphql";
 
 export const getAllChannelConfigsCount = (
   channelConfigurations: PluginConfigurationBaseFragment[]

@@ -1,4 +1,4 @@
-import { MenuDetailsFragmentFragment } from "@saleor/graphql";
+import { MenuDetailsFragment } from "@saleor/graphql";
 import { getPatch } from "fast-array-diff";
 import { TreeItem } from "react-sortable-tree";
 
@@ -34,7 +34,7 @@ function treeToMap(tree: TreeItem[], parent: string): Record<string, string[]> {
 }
 
 export function getItemType(
-  item: MenuDetailsFragmentFragment["items"][0]
+  item: MenuDetailsFragment["items"][0]
 ): MenuItemType {
   if (item.category) {
     return "category";
@@ -49,9 +49,7 @@ export function getItemType(
   }
 }
 
-export function getItemId(
-  item: MenuDetailsFragmentFragment["items"][0]
-): string {
+export function getItemId(item: MenuDetailsFragment["items"][0]): string {
   if (item.category) {
     return item.category.id;
   } else if (item.collection) {
@@ -95,7 +93,7 @@ export function getDiff(
 }
 
 export function getNodeData(
-  item: MenuDetailsFragmentFragment["items"][0],
+  item: MenuDetailsFragment["items"][0],
   onChange: (operation: TreeOperation) => void,
   onClick: (id: string, type: MenuItemType) => void,
   onEdit: (id: string) => void
@@ -113,9 +111,7 @@ export function getNodeData(
   };
 }
 
-export function getNodeQuantity(
-  items: MenuDetailsFragmentFragment["items"]
-): number {
+export function getNodeQuantity(items: MenuDetailsFragment["items"]): number {
   return items.reduce(
     (acc, curr) => acc + getNodeQuantity(curr.children),
     items.length

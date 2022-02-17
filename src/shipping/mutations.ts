@@ -4,7 +4,7 @@ export const deleteShippingZone = gql`
   mutation DeleteShippingZone($id: ID!) {
     shippingZoneDelete(id: $id) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
     }
   }
@@ -14,7 +14,7 @@ export const bulkDeleteShippingZone = gql`
   mutation BulkDeleteShippingZone($ids: [ID]!) {
     shippingZoneBulkDelete(ids: $ids) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
     }
   }
@@ -38,11 +38,11 @@ export const createShippingZone = gql`
   mutation CreateShippingZone($input: ShippingZoneCreateInput!) {
     shippingZoneCreate(input: $input) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
       shippingZone {
         countries {
-          ...CountryFragment
+          ...Country
         }
         default
         id
@@ -56,11 +56,11 @@ export const updateShippingZone = gql`
   mutation UpdateShippingZone($id: ID!, $input: ShippingZoneUpdateInput!) {
     shippingZoneUpdate(id: $id, input: $input) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
       shippingZone {
         countries {
-          ...CountryFragment
+          ...Country
         }
         default
         id
@@ -74,10 +74,10 @@ export const updateShippingRate = gql`
   mutation UpdateShippingRate($id: ID!, $input: ShippingPriceInput!) {
     shippingPriceUpdate(id: $id, input: $input) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
       shippingMethod {
-        ...ShippingMethodTypeFragment
+        ...ShippingMethodType
       }
     }
   }
@@ -87,13 +87,13 @@ export const createShippingRate = gql`
   mutation CreateShippingRate($input: ShippingPriceInput!) {
     shippingPriceCreate(input: $input) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
       shippingZone {
-        ...ShippingZoneDetailsFragment
+        ...ShippingZoneDetails
       }
       shippingMethod {
-        ...ShippingMethodTypeFragment
+        ...ShippingMethodType
       }
     }
   }
@@ -103,10 +103,10 @@ export const deleteShippingRate = gql`
   mutation DeleteShippingRate($id: ID!) {
     shippingPriceDelete(id: $id) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
       shippingZone {
-        ...ShippingZoneDetailsFragment
+        ...ShippingZoneDetails
       }
     }
   }
@@ -116,7 +116,7 @@ export const bulkDeleteShippingRate = gql`
   mutation BulkDeleteShippingRate($ids: [ID]!) {
     shippingPriceBulkDelete(ids: $ids) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
     }
   }
@@ -129,10 +129,10 @@ export const shippingMethodChannelListingUpdate = gql`
   ) {
     shippingMethodChannelListingUpdate(id: $id, input: $input) {
       shippingMethod {
-        ...ShippingMethodTypeFragment
+        ...ShippingMethodType
       }
       errors {
-        ...ShippingChannelsErrorFragment
+        ...ShippingChannelsError
       }
     }
   }
@@ -145,7 +145,7 @@ export const shippingPriceExcludeProducts = gql`
   ) {
     shippingPriceExcludeProducts(id: $id, input: $input) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
     }
   }
@@ -155,7 +155,7 @@ export const shippingPriceRemoveProductsFromExclude = gql`
   mutation ShippingPriceRemoveProductFromExclude($id: ID!, $products: [ID]!) {
     shippingPriceRemoveProductFromExclude(id: $id, products: $products) {
       errors {
-        ...ShippingErrorFragment
+        ...ShippingError
       }
     }
   }

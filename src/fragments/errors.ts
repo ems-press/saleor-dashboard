@@ -1,29 +1,28 @@
 import { gql } from "@apollo/client";
 
 export const attributeErrorFragment = gql`
-  fragment AttributeErrorFragment on AttributeError {
+  fragment AttributeError on AttributeError {
     code
     field
   }
 `;
 
 export const productErrorFragment = gql`
-  fragment ProductErrorFragment on ProductError {
+  fragment ProductError on ProductError {
     code
     field
   }
 `;
 
 export const productErrorWithAttributesFragment = gql`
-  ${productErrorFragment}
-  fragment ProductErrorWithAttributesFragment on ProductError {
-    ...ProductErrorFragment
+  fragment ProductErrorWithAttributes on ProductError {
+    ...ProductError
     attributes
   }
 `;
 
 export const productChannelListingErrorFragment = gql`
-  fragment ProductChannelListingErrorFragment on ProductChannelListingError {
+  fragment ProductChannelListingError on ProductChannelListingError {
     code
     field
     message
@@ -32,7 +31,7 @@ export const productChannelListingErrorFragment = gql`
 `;
 
 export const collectionChannelListingErrorFragment = gql`
-  fragment CollectionChannelListingErrorFragment on CollectionChannelListingError {
+  fragment CollectionChannelListingError on CollectionChannelListingError {
     code
     field
     message
@@ -41,7 +40,7 @@ export const collectionChannelListingErrorFragment = gql`
 `;
 
 export const accountErrorFragment = gql`
-  fragment AccountErrorFragment on AccountError {
+  fragment AccountError on AccountError {
     code
     field
     addressType
@@ -49,7 +48,7 @@ export const accountErrorFragment = gql`
 `;
 
 export const discountErrorFragment = gql`
-  fragment DiscountErrorFragment on DiscountError {
+  fragment DiscountError on DiscountError {
     code
     field
     channels
@@ -57,14 +56,14 @@ export const discountErrorFragment = gql`
 `;
 
 export const menuErrorFragment = gql`
-  fragment MenuErrorFragment on MenuError {
+  fragment MenuError on MenuError {
     code
     field
   }
 `;
 
 export const orderErrorFragment = gql`
-  fragment OrderErrorFragment on OrderError {
+  fragment OrderError on OrderError {
     code
     field
     addressType
@@ -72,36 +71,35 @@ export const orderErrorFragment = gql`
 `;
 
 export const orderSettingsErrorFragment = gql`
-  fragment OrderSettingsErrorFragment on OrderSettingsError {
+  fragment OrderSettingsError on OrderSettingsError {
     code
     field
   }
 `;
 
 export const pageErrorFragment = gql`
-  fragment PageErrorFragment on PageError {
+  fragment PageError on PageError {
     code
     field
   }
 `;
 
 export const pageErrorWithAttributesFragment = gql`
-  ${pageErrorFragment}
-  fragment PageErrorWithAttributesFragment on PageError {
-    ...PageErrorFragment
+  fragment PageErrorWithAttributes on PageError {
+    ...PageError
     attributes
   }
 `;
 
 export const permissionGroupErrorFragment = gql`
-  fragment PermissionGroupErrorFragment on PermissionGroupError {
+  fragment PermissionGroupError on PermissionGroupError {
     code
     field
   }
 `;
 
 export const bulkProductErrorFragment = gql`
-  fragment BulkProductErrorFragment on BulkProductError {
+  fragment BulkProductError on BulkProductError {
     field
     code
     index
@@ -109,21 +107,21 @@ export const bulkProductErrorFragment = gql`
   }
 `;
 export const bulkStockErrorFragment = gql`
-  fragment BulkStockErrorFragment on BulkStockError {
+  fragment BulkStockError on BulkStockError {
     code
     field
     index
   }
 `;
 export const stockErrorFragment = gql`
-  fragment StockErrorFragment on StockError {
+  fragment StockError on StockError {
     code
     field
   }
 `;
 
 export const shippingChannelsErrorFragment = gql`
-  fragment ShippingChannelsErrorFragment on ShippingError {
+  fragment ShippingChannelsError on ShippingError {
     code
     field
     channels
@@ -131,49 +129,49 @@ export const shippingChannelsErrorFragment = gql`
 `;
 
 export const shippingErrorFragment = gql`
-  fragment ShippingErrorFragment on ShippingError {
+  fragment ShippingError on ShippingError {
     code
     field
   }
 `;
 
 export const shopErrorFragment = gql`
-  fragment ShopErrorFragment on ShopError {
+  fragment ShopError on ShopError {
     code
     field
   }
 `;
 
 export const staffErrorFragment = gql`
-  fragment StaffErrorFragment on StaffError {
+  fragment StaffError on StaffError {
     code
     field
   }
 `;
 
 export const warehouseErrorFragment = gql`
-  fragment WarehouseErrorFragment on WarehouseError {
+  fragment WarehouseError on WarehouseError {
     code
     field
   }
 `;
 
 export const webhookErrorFragment = gql`
-  fragment WebhookErrorFragment on WebhookError {
+  fragment WebhookError on WebhookError {
     code
     field
   }
 `;
 
 export const invoiceErrorFragment = gql`
-  fragment InvoiceErrorFragment on InvoiceError {
+  fragment InvoiceError on InvoiceError {
     code
     field
   }
 `;
 
 export const appErrorFragment = gql`
-  fragment AppErrorFragment on AppError {
+  fragment AppError on AppError {
     field
     message
     code
@@ -182,35 +180,35 @@ export const appErrorFragment = gql`
 `;
 
 export const exportErrorFragment = gql`
-  fragment ExportErrorFragment on ExportError {
+  fragment ExportError on ExportError {
     code
     field
   }
 `;
 
 export const pluginErrorFragment = gql`
-  fragment PluginErrorFragment on PluginError {
+  fragment PluginError on PluginError {
     code
     field
   }
 `;
 
 export const metadataErrorFragment = gql`
-  fragment MetadataErrorFragment on MetadataError {
+  fragment MetadataError on MetadataError {
     code
     field
   }
 `;
 
 export const collectionsErrorFragment = gql`
-  fragment CollectionErrorFragment on CollectionError {
+  fragment CollectionError on CollectionError {
     code
     field
   }
 `;
 
 export const uploadErrorFragment = gql`
-  fragment UploadErrorFragment on UploadError {
+  fragment UploadError on UploadError {
     code
     field
   }
@@ -224,7 +222,7 @@ export const giftCardErrorFragment = gql`
 `;
 
 export const giftCardSettingsErrorFragment = gql`
-  fragment GiftCardSettingsErrorFragment on GiftCardSettingsError {
+  fragment GiftCardSettingsError on GiftCardSettingsError {
     code
     field
   }

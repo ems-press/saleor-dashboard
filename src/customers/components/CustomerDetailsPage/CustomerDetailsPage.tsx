@@ -6,12 +6,8 @@ import Metadata from "@saleor/components/Metadata/Metadata";
 import { MetadataFormData } from "@saleor/components/Metadata/types";
 import PageHeader from "@saleor/components/PageHeader";
 import Savebar from "@saleor/components/Savebar";
-import { AccountErrorFragment } from "@saleor/fragments/types/AccountErrorFragment";
 import CustomerGiftCardsCard from "@saleor/giftCards/components/GiftCardCustomerCard/CustomerGiftCardsCard";
-import {
-  AccountErrorFragmentFragment,
-  CustomerDetailsQuery
-} from "@saleor/graphql";
+import { AccountErrorFragment, CustomerDetailsQuery } from "@saleor/graphql";
 import { SubmitPromise } from "@saleor/hooks/useForm";
 import { sectionNames } from "@saleor/intl";
 import { Backlink, ConfirmButtonTransitionState } from "@saleor/macaw-ui";
@@ -43,7 +39,7 @@ export interface CustomerDetailsPageProps {
   onBack: () => void;
   onSubmit: (
     data: CustomerDetailsPageFormData
-  ) => SubmitPromise<AccountErrorFragmentFragment[]>;
+  ) => SubmitPromise<AccountErrorFragment[]>;
   onViewAllOrdersClick: () => void;
   onRowClick: (id: string) => void;
   onAddressManageClick: () => void;

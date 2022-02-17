@@ -2,7 +2,7 @@ import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import StatusLabel from "@saleor/components/StatusLabel";
 import { statusLabelMessages } from "@saleor/components/StatusLabel/messages";
-import { PluginBaseFragmentFragment } from "@saleor/graphql";
+import { PluginBaseFragment } from "@saleor/graphql";
 import { isPluginGlobal } from "@saleor/plugins/views/utils";
 import React from "react";
 import { useIntl } from "react-intl";
@@ -24,7 +24,7 @@ const useStyles = makeStyles(
 );
 
 interface PluginAvailabilityStatusProps {
-  plugin: PluginBaseFragmentFragment;
+  plugin: PluginBaseFragment;
 }
 
 const PluginAvailabilityStatus: React.FC<PluginAvailabilityStatusProps> = ({

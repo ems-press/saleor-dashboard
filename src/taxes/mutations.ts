@@ -8,7 +8,7 @@ export const updateTaxSettings = gql`
         message
       }
       shop {
-        ...ShopTaxesFragment
+        ...ShopTaxes
       }
     }
   }
@@ -23,7 +23,7 @@ export const fetchTaxes = gql`
       }
       shop {
         countries {
-          ...CountryFragment
+          ...Country
         }
       }
     }

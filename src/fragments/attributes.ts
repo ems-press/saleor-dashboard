@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const attributeValueFragment = gql`
-  fragment AttributeValueFragment on AttributeValue {
+  fragment AttributeValue on AttributeValue {
     id
     name
     slug
     file {
-      ...FileFragment
+      ...File
     }
     reference
     richText
@@ -18,7 +18,7 @@ export const attributeValueFragment = gql`
 `;
 
 export const attributeFragment = gql`
-  fragment AttributeFragment on Attribute {
+  fragment Attribute on Attribute {
     id
     name
     slug
@@ -32,9 +32,9 @@ export const attributeFragment = gql`
 `;
 
 export const attributeDetailsFragment = gql`
-  fragment AttributeDetailsFragment on Attribute {
-    ...AttributeFragment
-    ...MetadataFragment
+  fragment AttributeDetails on Attribute {
+    ...Attribute
+    ...Metadata
     availableInGrid
     inputType
     entityType
@@ -45,21 +45,21 @@ export const attributeDetailsFragment = gql`
 `;
 
 export const attributeValueListFragment = gql`
-  fragment AttributeValueListFragment on AttributeValueCountableConnection {
+  fragment AttributeValueList on AttributeValueCountableConnection {
     pageInfo {
-      ...PageInfoFragment
+      ...PageInfo
     }
     edges {
       cursor
       node {
-        ...AttributeValueFragment
+        ...AttributeValue
       }
     }
   }
 `;
 
 export const availableAttributeFragment = gql`
-  fragment AvailableAttributeFragment on Attribute {
+  fragment AvailableAttribute on Attribute {
     id
     name
     slug

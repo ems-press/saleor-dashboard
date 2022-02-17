@@ -4,7 +4,7 @@ export const pageCreate = gql`
   mutation PageCreate($input: PageCreateInput!) {
     pageCreate(input: $input) {
       errors {
-        ...PageErrorWithAttributesFragment
+        ...PageErrorWithAttributes
         message
       }
       page {
@@ -25,10 +25,10 @@ export const pageUpdate = gql`
   ) {
     pageUpdate(id: $id, input: $input) {
       errors {
-        ...PageErrorWithAttributesFragment
+        ...PageErrorWithAttributes
       }
       page {
-        ...PageDetailsFragment
+        ...PageDetails
       }
     }
   }
@@ -38,7 +38,7 @@ export const pageRemove = gql`
   mutation PageRemove($id: ID!) {
     pageDelete(id: $id) {
       errors {
-        ...PageErrorFragment
+        ...PageError
       }
     }
   }

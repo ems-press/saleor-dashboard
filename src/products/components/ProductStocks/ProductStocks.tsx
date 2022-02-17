@@ -24,8 +24,7 @@ import { DateTimeTimezoneField } from "@saleor/components/DateTimeTimezoneField"
 import FormSpacer from "@saleor/components/FormSpacer";
 import Hr from "@saleor/components/Hr";
 import Link from "@saleor/components/Link";
-import { ProductErrorFragment } from "@saleor/fragments/types/ProductErrorFragment";
-import { WarehouseFragment } from "@saleor/fragments/types/WarehouseFragment";
+import { ProductErrorFragment, WarehouseFragment } from "@saleor/graphql";
 import { FormChange, FormErrors } from "@saleor/hooks/useForm";
 import { FormsetAtomicData, FormsetChange } from "@saleor/hooks/useFormset";
 import {
