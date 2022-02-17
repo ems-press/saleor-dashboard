@@ -6,11 +6,11 @@ import {
   useQuery as useBaseQuery
 } from "@apollo/client";
 import { handleQueryAuthError, useUser } from "@saleor/auth";
+import { PrefixedPermissions } from "@saleor/graphql/extendedTypes";
 import {
   PermissionEnum,
-  PrefixedPermissions,
   UserPermissionFragment
-} from "@saleor/graphql";
+} from "@saleor/graphql/types.generated";
 import { RequireAtLeastOne } from "@saleor/misc";
 import { DocumentNode } from "graphql";
 import { useEffect } from "react";
