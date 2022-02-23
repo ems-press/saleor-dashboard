@@ -503,3 +503,6 @@ export const combinedMultiAutocompleteChoices = (
   selected: MultiAutocompleteChoiceType[],
   choices: MultiAutocompleteChoiceType[]
 ) => uniqBy([...selected, ...choices], "value");
+
+export const isInDevelopment =
+  !process.env.NODE_ENV || process.env.NODE_ENV === "development";
