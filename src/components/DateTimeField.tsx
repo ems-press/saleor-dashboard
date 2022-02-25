@@ -4,8 +4,8 @@ import { getErrorMessage } from "@saleor/components/Attributes/utils";
 import { PageErrorWithAttributesFragment } from "@saleor/fragments/types/PageErrorWithAttributesFragment";
 import { ProductErrorWithAttributesFragment } from "@saleor/fragments/types/ProductErrorWithAttributesFragment";
 import { commonMessages } from "@saleor/intl";
-import { DateTime, joinDateTime, splitDateTime } from "@saleor/misc";
-import React, { useEffect, useState } from "react";
+import { joinDateTime, splitDateTime } from "@saleor/misc";
+import React from "react";
 import { useIntl } from "react-intl";
 
 type DateTimeFieldProps = Omit<TextFieldProps, "label" | "error"> & {
@@ -19,14 +19,11 @@ export const DateTimeField: React.FC<DateTimeFieldProps> = ({
   error,
   name,
   onChange,
-  value: initialValue
+  value
 }) => {
   const intl = useIntl();
-  const [value, setValue] = useState<DateTime>(
-    initialValue ? splitDateTime(initialValue) : { date: "", time: "" }
-  );
 
-  useEffect(() => onChange(joinDateTime(value.date, value.time)), [value]);
+  const parsedValue = value ? splitDateTime(value) : { date: "", time: "" };
 
   return (
     <>
@@ -39,10 +36,11 @@ export const DateTimeField: React.FC<DateTimeFieldProps> = ({
         name={`${name}:date`}
         onChange={event => {
           const date = event.target.value;
-          setValue(value => ({ ...value, date }));
+
+          onChange(joinDateTime(date, parsedValue.time));
         }}
         type="date"
-        value={value.date}
+        value={parsedValue.date}
         InputLabelProps={{ shrink: true }}
       />
       <TextField
@@ -54,10 +52,11 @@ export const DateTimeField: React.FC<DateTimeFieldProps> = ({
         name={`${name}:time`}
         onChange={event => {
           const time = event.target.value;
-          setValue(value => ({ ...value, time }));
+
+          onChange(joinDateTime(parsedValue.date, time));
         }}
         type="time"
-        value={value.time}
+        value={parsedValue.time}
         InputLabelProps={{ shrink: true }}
       />
     </>
