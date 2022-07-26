@@ -1137,6 +1137,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
                 __typename: "Product",
                 id: "UHJvZHVjdDo1",
                 isAvailableForPurchase: true,
+                productType: { __typename: "ProductType", name: "Clothing" },
               },
               stocks: [
                 {
@@ -1251,6 +1252,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
                 __typename: "Product",
                 id: "UHJvZHVjdDo1",
                 isAvailableForPurchase: true,
+                productType: { __typename: "ProductType", name: "Clothing" },
               },
               stocks: [
                 {
@@ -1373,6 +1375,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
           __typename: "Product",
           id: "UHJvZHVjdDo1",
           isAvailableForPurchase: true,
+          productType: { __typename: "ProductType", name: "Clothing" },
         },
         stocks: [
           {
@@ -1473,6 +1476,7 @@ export const order = (placeholder: string): OrderDetailsFragment => ({
           __typename: "Product",
           id: "UHJvZHVjdDo1",
           isAvailableForPurchase: true,
+          productType: { __typename: "ProductType", name: "Clothing" },
         },
         stocks: [
           {
@@ -1716,6 +1720,7 @@ export const draftOrder = (placeholder: string): OrderDetailsFragment => ({
           __typename: "Product",
           id: "UHJvZHVjdDo1",
           isAvailableForPurchase: true,
+          productType: { __typename: "ProductType", name: "Clothing" },
         },
         stocks: [
           {
@@ -1815,6 +1820,7 @@ export const draftOrder = (placeholder: string): OrderDetailsFragment => ({
           __typename: "Product",
           id: "UHJvZHVjdDo1",
           isAvailableForPurchase: true,
+          productType: { __typename: "ProductType", name: "Clothing" },
         },
         stocks: [
           {
