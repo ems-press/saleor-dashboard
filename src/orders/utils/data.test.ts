@@ -525,6 +525,7 @@ describe("Get the total value of all replaced products", () => {
           {
             id: "allocation_test_id",
             warehouse: {
+              name: "US Warehouse",
               id:
                 "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
               __typename: "Warehouse",
@@ -623,6 +624,7 @@ describe("Get the total value of all replaced products", () => {
           {
             id: "allocation_test_id",
             warehouse: {
+              name: "US Warehouse",
               id:
                 "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
               __typename: "Warehouse",
@@ -721,6 +723,7 @@ describe("Get the total value of all replaced products", () => {
           {
             id: "allocation_test_id",
             warehouse: {
+              name: "US Warehouse",
               id:
                 "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
               __typename: "Warehouse",
@@ -825,6 +828,7 @@ describe("Get the total value of all replaced products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -928,6 +932,7 @@ describe("Get the total value of all replaced products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -1031,6 +1036,7 @@ describe("Get the total value of all replaced products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -1134,6 +1140,7 @@ describe("Get the total value of all replaced products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -1237,6 +1244,7 @@ describe("Get the total value of all replaced products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -1474,6 +1482,7 @@ describe("Get the total value of all selected products", () => {
           {
             id: "allocation_test_id",
             warehouse: {
+              name: "US Warehouse",
               id:
                 "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
               __typename: "Warehouse",
@@ -1572,6 +1581,7 @@ describe("Get the total value of all selected products", () => {
           {
             id: "allocation_test_id",
             warehouse: {
+              name: "US Warehouse",
               id:
                 "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
               __typename: "Warehouse",
@@ -1670,6 +1680,7 @@ describe("Get the total value of all selected products", () => {
           {
             id: "allocation_test_id",
             warehouse: {
+              name: "US Warehouse",
               id:
                 "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
               __typename: "Warehouse",
@@ -1774,6 +1785,7 @@ describe("Get the total value of all selected products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -1877,6 +1889,7 @@ describe("Get the total value of all selected products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -1980,6 +1993,7 @@ describe("Get the total value of all selected products", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -2211,6 +2225,7 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -2314,6 +2329,7 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
@@ -2417,6 +2433,7 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             {
               id: "allocation_test_id",
               warehouse: {
+                name: "US Warehouse",
                 id:
                   "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
                 __typename: "Warehouse",
