@@ -542,6 +542,8 @@ describe("Get the total value of all replaced products", () => {
           product: {
             __typename: "Product",
             productType: { __typename: "ProductType", name: "Audio File" },
+            id: "UHJvZHVjdDo1",
+            channelListings: [],
           },
           stocks: [
             {
@@ -637,10 +639,6 @@ describe("Get the total value of all replaced products", () => {
           id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
           quantityAvailable: 50,
           preorder: null,
-          product: {
-            __typename: "Product",
-            productType: { __typename: "ProductType", name: "Audio File" },
-          },
           stocks: [
             {
               id: "stock_test_id1",
@@ -668,6 +666,12 @@ describe("Get the total value of all replaced products", () => {
             },
           ],
           __typename: "ProductVariant",
+          product: {
+            __typename: "Product",
+            id: "UHJvZHVjdDo1",
+            channelListings: [],
+            productType: { __typename: "ProductType", name: "Audio File" },
+          },
         },
         productName: "Lake Tunes",
         productSku: "lake-tunes-mp3",
@@ -736,10 +740,6 @@ describe("Get the total value of all replaced products", () => {
           id: "UHJvZHVjdFZhcmlhbnQ6Mjg2",
           quantityAvailable: 50,
           preorder: null,
-          product: {
-            __typename: "Product",
-            productType: { __typename: "ProductType", name: "Clothing" },
-          },
           stocks: [
             {
               id: "stock_test_id1",
@@ -767,6 +767,12 @@ describe("Get the total value of all replaced products", () => {
             },
           ],
           __typename: "ProductVariant",
+          product: {
+            __typename: "Product",
+            id: "UHJvZHVjdDo1",
+            channelListings: [],
+            productType: { __typename: "ProductType", name: "Clothing" },
+          },
         },
         productName: "T-shirt",
         productSku: "29810068",
@@ -841,10 +847,6 @@ describe("Get the total value of all replaced products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -872,6 +874,12 @@ describe("Get the total value of all replaced products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -945,10 +953,6 @@ describe("Get the total value of all replaced products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -976,6 +980,12 @@ describe("Get the total value of all replaced products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -1049,10 +1059,6 @@ describe("Get the total value of all replaced products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6Mjg2",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Clothing" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -1080,6 +1086,12 @@ describe("Get the total value of all replaced products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Clothing" },
+            },
           },
           productName: "T-shirt",
           productSku: "29810068",
@@ -1153,10 +1165,6 @@ describe("Get the total value of all replaced products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -1184,6 +1192,12 @@ describe("Get the total value of all replaced products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -1257,10 +1271,6 @@ describe("Get the total value of all replaced products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -1288,6 +1298,12 @@ describe("Get the total value of all replaced products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -1495,10 +1511,6 @@ describe("Get the total value of all selected products", () => {
           id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
           quantityAvailable: 50,
           preorder: null,
-          product: {
-            __typename: "Product",
-            productType: { __typename: "ProductType", name: "Audio File" },
-          },
           stocks: [
             {
               id: "stock_test_id1",
@@ -1526,6 +1538,12 @@ describe("Get the total value of all selected products", () => {
             },
           ],
           __typename: "ProductVariant",
+          product: {
+            __typename: "Product",
+            id: "UHJvZHVjdDo1",
+            channelListings: [],
+            productType: { __typename: "ProductType", name: "Audio File" },
+          },
         },
         productName: "Lake Tunes",
         productSku: "lake-tunes-mp3",
@@ -1594,10 +1612,6 @@ describe("Get the total value of all selected products", () => {
           id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
           quantityAvailable: 50,
           preorder: null,
-          product: {
-            __typename: "Product",
-            productType: { __typename: "ProductType", name: "Audio File" },
-          },
           stocks: [
             {
               id: "stock_test_id1",
@@ -1625,6 +1639,12 @@ describe("Get the total value of all selected products", () => {
             },
           ],
           __typename: "ProductVariant",
+          product: {
+            __typename: "Product",
+            id: "UHJvZHVjdDo1",
+            channelListings: [],
+            productType: { __typename: "ProductType", name: "Audio File" },
+          },
         },
         productName: "Lake Tunes",
         productSku: "lake-tunes-mp3",
@@ -1693,10 +1713,6 @@ describe("Get the total value of all selected products", () => {
           id: "UHJvZHVjdFZhcmlhbnQ6Mjg2",
           quantityAvailable: 50,
           preorder: null,
-          product: {
-            __typename: "Product",
-            productType: { __typename: "ProductType", name: "Clothing" },
-          },
           stocks: [
             {
               id: "stock_test_id1",
@@ -1724,6 +1740,12 @@ describe("Get the total value of all selected products", () => {
             },
           ],
           __typename: "ProductVariant",
+          product: {
+            __typename: "Product",
+            id: "UHJvZHVjdDo1",
+            channelListings: [],
+            productType: { __typename: "ProductType", name: "Clothing" },
+          },
         },
         productName: "T-shirt",
         productSku: "29810068",
@@ -1798,10 +1820,6 @@ describe("Get the total value of all selected products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -1829,6 +1847,12 @@ describe("Get the total value of all selected products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -1902,10 +1926,6 @@ describe("Get the total value of all selected products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -1933,6 +1953,12 @@ describe("Get the total value of all selected products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -2006,10 +2032,6 @@ describe("Get the total value of all selected products", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6Mjg2",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Clothing" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -2037,6 +2059,12 @@ describe("Get the total value of all selected products", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Clothing" },
+            },
           },
           productName: "T-shirt",
           productSku: "29810068",
@@ -2238,10 +2266,6 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -2269,6 +2293,12 @@ describe("Merge repeated order lines of fulfillment lines", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -2342,10 +2372,6 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6MzE3",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Audio File" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -2373,6 +2399,12 @@ describe("Merge repeated order lines of fulfillment lines", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Audio File" },
+            },
           },
           productName: "Lake Tunes",
           productSku: "lake-tunes-mp3",
@@ -2446,10 +2478,6 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             id: "UHJvZHVjdFZhcmlhbnQ6Mjg2",
             quantityAvailable: 50,
             preorder: null,
-            product: {
-              __typename: "Product",
-              productType: { __typename: "ProductType", name: "Clothing" },
-            },
             stocks: [
               {
                 id: "stock_test_id1",
@@ -2477,6 +2505,12 @@ describe("Merge repeated order lines of fulfillment lines", () => {
               },
             ],
             __typename: "ProductVariant",
+            product: {
+              __typename: "Product",
+              id: "UHJvZHVjdDo1",
+              channelListings: [],
+              productType: { __typename: "ProductType", name: "Clothing" },
+            },
           },
           productName: "T-shirt",
           productSku: "29810068",
