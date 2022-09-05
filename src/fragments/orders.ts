@@ -98,14 +98,7 @@ export const fragmentOrderLine = gql`
       }
       product {
         id
-        channelListings {
-          id
-          isPublished
-          isAvailableForPurchase
-          channel {
-            id
-          }
-        }
+        isAvailableForPurchase
       }
     }
     productName

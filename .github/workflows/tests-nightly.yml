@@ -50,7 +50,7 @@ jobs:
 
       - name: Install saleor cli
         id: install-saleor-cli
-        run: npm i -g saleor-cli@next
+        run: npm i -g @saleor/cli
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -132,6 +132,8 @@ jobs:
           CYPRESS_mailHogUrl: ${{ secrets.CYPRESS_MAILHOG }}
           COMMIT_INFO_MESSAGE: All tests triggered via ${{ github.event_name}} on ${{ steps.get-env-uri.outputs.ENV_URI }}
           CYPRESS_grepTags: ${{ github.event.inputs.tags }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
         with:
           parallel: true
           group: 'UI - Chrome'
