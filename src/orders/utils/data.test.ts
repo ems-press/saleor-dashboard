@@ -669,7 +669,6 @@ describe("Get the total value of all replaced products", () => {
           product: {
             __typename: "Product",
             id: "UHJvZHVjdDo1",
-            channelListings: [],
             productType: { __typename: "ProductType", name: "Audio File" },
             isAvailableForPurchase: true,
           },
@@ -771,7 +770,6 @@ describe("Get the total value of all replaced products", () => {
           product: {
             __typename: "Product",
             id: "UHJvZHVjdDo1",
-            channelListings: [],
             productType: { __typename: "ProductType", name: "Clothing" },
             isAvailableForPurchase: true,
           },
@@ -879,7 +877,6 @@ describe("Get the total value of all replaced products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -986,7 +983,6 @@ describe("Get the total value of all replaced products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -1093,7 +1089,6 @@ describe("Get the total value of all replaced products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Clothing" },
               isAvailableForPurchase: true,
             },
@@ -1200,7 +1195,6 @@ describe("Get the total value of all replaced products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -1307,7 +1301,6 @@ describe("Get the total value of all replaced products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -1548,7 +1541,6 @@ describe("Get the total value of all selected products", () => {
           product: {
             __typename: "Product",
             id: "UHJvZHVjdDo1",
-            channelListings: [],
             productType: { __typename: "ProductType", name: "Audio File" },
             isAvailableForPurchase: true,
           },
@@ -1650,7 +1642,6 @@ describe("Get the total value of all selected products", () => {
           product: {
             __typename: "Product",
             id: "UHJvZHVjdDo1",
-            channelListings: [],
             productType: { __typename: "ProductType", name: "Audio File" },
             isAvailableForPurchase: true,
           },
@@ -1752,7 +1743,6 @@ describe("Get the total value of all selected products", () => {
           product: {
             __typename: "Product",
             id: "UHJvZHVjdDo1",
-            channelListings: [],
             productType: { __typename: "ProductType", name: "Clothing" },
             isAvailableForPurchase: true,
           },
@@ -1860,7 +1850,6 @@ describe("Get the total value of all selected products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -1967,7 +1956,6 @@ describe("Get the total value of all selected products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -2074,7 +2062,6 @@ describe("Get the total value of all selected products", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Clothing" },
               isAvailableForPurchase: true,
             },
@@ -2309,7 +2296,6 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -2416,7 +2402,6 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Audio File" },
               isAvailableForPurchase: true,
             },
@@ -2523,7 +2508,6 @@ describe("Merge repeated order lines of fulfillment lines", () => {
             product: {
               __typename: "Product",
               id: "UHJvZHVjdDo1",
-              channelListings: [],
               productType: { __typename: "ProductType", name: "Clothing" },
               isAvailableForPurchase: true,
             },
