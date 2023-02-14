@@ -5,7 +5,7 @@ import { AVATAR_MARGIN } from "@dashboard/components/TableCellAvatar/Avatar";
 import TableRowLink from "@dashboard/components/TableRowLink";
 import { OrderDetailsFragment, OrderLineFragment } from "@dashboard/graphql";
 import { maybe } from "@dashboard/misc";
-import { TableCell } from "@material-ui/core";
+import { TableCell, Typography } from "@material-ui/core";
 import { makeStyles } from "@saleor/macaw-ui";
 import React from "react";
 
@@ -80,6 +80,11 @@ const TableLine: React.FC<TableLineProps> = ({
         thumbnail={maybe(() => line.orderLine.thumbnail.url)}
       >
         {maybe(() => line.orderLine.productName) || <Skeleton />}
+        {maybe(() => line.orderLine.variant.product.productType.name) ? (
+          <Typography color="textSecondary" variant="caption">
+            {line.orderLine.variant.product.productType.name}
+          </Typography>
+        ) : null}
       </TableCellAvatar>
       <TableCell className={classes.colSku}>
         {line?.orderLine ? line.orderLine.productSku : <Skeleton />}

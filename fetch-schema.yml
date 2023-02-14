@@ -1,4 +1,4 @@
-schema: ${API_URI}
+schema: http://localhost:8000/graphql/
 generates:
   ./introspection.json:
     plugins:
